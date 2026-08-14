@@ -7,6 +7,7 @@ import {
 
 import SuperAdminLayout from "./layouts/SuperAdminLayout";
 import SuperAdminDashboard from "./pages/super-admin/dashboard/SuperAdminDashboard";
+import SignIn from "./pages/auth/SignIn";
 
 import ModulePlaceholder from "./components/common/ModulePlaceholder";
 import SuperAdminNotFound from "./pages/super-admin/SuperAdminNotFound";
@@ -17,7 +18,12 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={<Navigate to="/super-admin" replace />}
+          element={<Navigate to="/login" replace />}
+        />
+
+        <Route
+          path="/login"
+          element={<SignIn />}
         />
 
         <Route
@@ -36,23 +42,17 @@ function App() {
 
           <Route
             path="income-statement"
-            element={
-              <ModulePlaceholder title="Income Statement" />
-            }
+            element={<ModulePlaceholder title="Income Statement" />}
           />
 
           <Route
             path="cash-flow"
-            element={
-              <ModulePlaceholder title="Cash Flow Statement" />
-            }
+            element={<ModulePlaceholder title="Cash Flow Statement" />}
           />
 
           <Route
             path="bank-accounts"
-            element={
-              <ModulePlaceholder title="Bank Accounts" />
-            }
+            element={<ModulePlaceholder title="Bank Accounts" />}
           />
 
           <Route
@@ -62,9 +62,7 @@ function App() {
 
           <Route
             path="users"
-            element={
-              <ModulePlaceholder title="User Management" />
-            }
+            element={<ModulePlaceholder title="User Management" />}
           />
 
           <Route
@@ -74,23 +72,17 @@ function App() {
 
           <Route
             path="ai-hub"
-            element={
-              <ModulePlaceholder title="AI Innovation Hub" />
-            }
+            element={<ModulePlaceholder title="AI Innovation Hub" />}
           />
 
           <Route
             path="chat-monitoring"
-            element={
-              <ModulePlaceholder title="Chat Monitoring" />
-            }
+            element={<ModulePlaceholder title="Chat Monitoring" />}
           />
 
           <Route
             path="deleted-orders"
-            element={
-              <ModulePlaceholder title="Deleted Orders" />
-            }
+            element={<ModulePlaceholder title="Deleted Orders" />}
           />
 
           <Route
@@ -101,7 +93,7 @@ function App() {
 
         <Route
           path="*"
-          element={<Navigate to="/super-admin" replace />}
+          element={<Navigate to="/login" replace />}
         />
       </Routes>
     </BrowserRouter>

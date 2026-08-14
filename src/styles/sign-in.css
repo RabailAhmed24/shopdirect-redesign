@@ -1,0 +1,869 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+/* =========================
+   PAGE
+========================= */
+
+.signin-page {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 32px;
+
+  overflow: hidden;
+
+  font-family:
+    "Inter",
+    "Poppins",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  background:
+    radial-gradient(
+      circle at 92% 8%,
+      rgba(76, 29, 149, 0.11),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 7% 93%,
+      rgba(76, 29, 149, 0.06),
+      transparent 27%
+    ),
+    #f6f4fa;
+}
+
+/* =========================
+   MAIN
+========================= */
+
+.signin-shell {
+  width: min(1240px, 100%);
+  height: min(720px, calc(100vh - 64px));
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  overflow: hidden;
+
+  border-radius: 30px;
+  background: #ffffff;
+
+  box-shadow:
+    0 32px 80px rgba(47, 20, 86, 0.15),
+    0 8px 28px rgba(47, 20, 86, 0.07);
+}
+
+/* =========================
+   LEFT
+========================= */
+
+.signin-visual {
+  position: relative;
+  overflow: hidden;
+
+  padding: 38px 46px 0;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      145deg,
+      #35116f 0%,
+      #40157f 42%,
+      #4c1d95 72%,
+      #5926a4 100%
+    );
+}
+
+.visual-content {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 0;
+}
+
+/* =========================
+   BACKGROUND SHAPES
+========================= */
+
+.visual-shape {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.visual-shape-one {
+  width: 430px;
+  height: 430px;
+
+  top: -210px;
+  right: -175px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  background:
+    rgba(255, 255, 255, 0.025);
+}
+
+.visual-shape-two {
+  width: 300px;
+  height: 300px;
+
+  left: -155px;
+  bottom: -160px;
+
+  background:
+    rgba(255, 255, 255, 0.035);
+}
+
+/* =========================
+   BRAND
+========================= */
+
+.visual-brand {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  flex-shrink: 0;
+}
+
+.visual-brand-icon {
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 13px;
+
+  color: #4c1d95;
+  background: #ffffff;
+
+  box-shadow:
+    0 9px 22px rgba(20, 5, 43, 0.19);
+}
+
+.visual-brand-copy h1 {
+  margin: 0;
+
+  font-size: 24px;
+  line-height: 1;
+
+  font-weight: 760;
+
+  letter-spacing: -0.7px;
+}
+
+.visual-brand-copy h1 span {
+  color: #d0c0ff;
+}
+
+.visual-brand-copy p {
+  margin: 6px 0 0;
+
+  color: rgba(255, 255, 255, 0.62);
+
+  font-size: 10px;
+}
+
+/* =========================
+   LEFT TEXT
+========================= */
+
+.visual-message {
+  width: 100%;
+  max-width: 470px;
+
+  margin: 26px auto 0;
+
+  position: static;
+  transform: none;
+
+  text-align: center;
+
+  flex-shrink: 0;
+}
+
+.visual-small-label {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: rgba(255, 255, 255, 0.65);
+
+  font-size: 9px;
+  font-weight: 650;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+}
+
+.visual-message h2 {
+  margin: 0;
+
+  font-size: clamp(34px, 2.7vw, 43px);
+  line-height: 1.04;
+
+  font-weight: 740;
+
+  letter-spacing: -1.8px;
+}
+
+.visual-message h2 span {
+  display: block;
+
+  color: #d1c1ff;
+}
+
+.visual-message p {
+  max-width: 400px;
+
+  margin: 12px auto 0;
+
+  color: rgba(255, 255, 255, 0.68);
+
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+/* =========================
+   ILLUSTRATION
+========================= */
+
+.visual-illustration {
+  width: 100%;
+
+  flex: 1;
+  min-height: 0;
+
+  margin-top: 2px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  position: relative;
+
+  overflow: visible;
+}
+
+.visual-illustration img {
+  width: auto;
+  height: auto;
+
+  max-width: 98%;
+  max-height: 100%;
+
+  display: block;
+
+  object-fit: contain;
+  object-position: center bottom;
+
+  transform: translateY(-6px);
+
+  transform-origin: center bottom;
+
+  filter:
+    drop-shadow(
+      0 14px 22px rgba(15, 3, 36, 0.14)
+    );
+
+  animation:
+    illustrationFloat
+    5s
+    ease-in-out
+    infinite;
+}
+
+@keyframes illustrationFloat {
+  0%,
+  100% {
+    transform: translateY(-6px);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* =========================
+   RIGHT
+========================= */
+
+.signin-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 48px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #fdfcfe 100%
+    );
+}
+
+.signin-form-wrapper {
+  width: 100%;
+  max-width: 450px;
+}
+
+/* =========================
+   HEADING
+========================= */
+
+.signin-heading {
+  margin-bottom: 52px;
+}
+
+.signin-heading h2 {
+  margin: 0 0 11px;
+
+  color: #17131b;
+
+  font-size: 36px;
+  line-height: 1.05;
+
+  font-weight: 760;
+
+  letter-spacing: -1.3px;
+}
+
+.signin-heading p {
+  margin: 0;
+
+  color: #817a89;
+
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.signin-heading p strong {
+  color: #4c1d95;
+}
+
+/* =========================
+   PROGRESS
+========================= */
+
+.signin-progress {
+  width: 100%;
+  margin: 0 0 60px;
+}
+
+.progress-track {
+  position: relative;
+  width: 100%;
+  height: 34px;
+}
+
+.progress-track::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 17px;
+  right: 17px;
+  height: 2px;
+  transform: translateY(-50%);
+  border-radius: 999px;
+  background: #dfdae7;
+  z-index: 1;
+}
+
+.progress-fill {
+  position: absolute;
+  top: 50%;
+  left: 17px;
+  height: 2px;
+  transform: translateY(-50%);
+  border-radius: 999px;
+  background: #4c1d95;
+  z-index: 2;
+  transition: width 0.35s ease;
+}
+
+.progress-fill[style*="width: 0%"] {
+  width: 0 !important;
+}
+
+.progress-fill[style*="width: 50%"] {
+  width: calc(50% - 17px) !important;
+}
+
+.progress-fill[style*="width: 100%"] {
+  width: calc(100% - 34px) !important;
+}
+
+.progress-step {
+  position: absolute;
+  top: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #aaa4b1;
+  z-index: 3;
+}
+
+.progress-start {
+  left: 17px;
+  transform: translate(-50%, -50%);
+}
+
+.progress-end {
+  right: 17px;
+  transform: translate(50%, -50%);
+}
+
+.progress-icon {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1.5px solid #ddd8e5;
+  border-radius: 50%;
+  color: #aaa5b1;
+  background: #ffffff;
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.progress-step span {
+  position: absolute;
+  top: 43px;
+  white-space: nowrap;
+  font-size: 9px;
+  font-weight: 650;
+  color: #aaa4b1;
+}
+
+.progress-step.active {
+  color: #4c1d95;
+}
+
+.progress-step.active .progress-icon {
+  color: #4c1d95;
+  border-color: #4c1d95;
+  box-shadow: 0 0 0 4px rgba(76, 29, 149, 0.05);
+}
+
+.progress-step.active span {
+  color: #4c1d95;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.signin-form {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 24px;
+}
+
+.signin-field {
+  width: 100%;
+}
+
+
+.signin-field label {
+  display: block;
+
+  width: 100%;
+
+  margin: 0 0 8px 2px;
+
+  text-align: left;
+
+  color: #4c1d95;
+
+  font-size: 9px;
+  font-weight: 760;
+
+  letter-spacing: 1.4px;
+
+  text-transform: uppercase;
+}
+
+
+.signin-input {
+  width: 100%;
+  height: 52px;
+
+  padding: 0 14px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  border: 1px solid #ded9e6;
+  border-radius: 12px;
+
+  color: #7356a2;
+  background: #ffffff;
+
+  box-shadow:
+    0 5px 14px rgba(48, 28, 71, 0.04);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.signin-input:hover {
+  border-color: #cec5da;
+}
+
+.signin-input:focus-within {
+  border-color: #6330b3;
+
+  box-shadow:
+    0 0 0 4px rgba(76, 29, 149, 0.055),
+    0 6px 16px rgba(48, 28, 71, 0.045);
+}
+
+.signin-input.valid {
+  border-color: #bde3c8;
+}
+
+
+.signin-input input {
+  width: 100%;
+  min-width: 0;
+
+  border: none;
+  outline: none;
+
+  padding: 0;
+
+  color: #241f29;
+  background: transparent;
+
+  font-family: inherit;
+  font-size: 12.5px;
+}
+
+.signin-input input::placeholder {
+  color: #aaa5b0;
+}
+
+
+.validation-check {
+  width: 22px;
+  height: 22px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: #178b43;
+  background: #daf4e3;
+}
+
+
+.password-toggle {
+  padding: 4px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border: none;
+
+  color: #837b90;
+  background: transparent;
+
+  cursor: pointer;
+}
+
+.password-toggle:hover {
+  color: #4c1d95;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.signin-button {
+  width: 100%;
+  height: 56px;
+
+  margin-top: 2px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  border: none;
+
+  border-radius: 13px;
+
+  font-family: inherit;
+
+  font-size: 14px;
+  font-weight: 720;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.signin-button:disabled {
+  color:
+    rgba(255, 255, 255, 0.8);
+
+  background: #d4c7e8;
+
+  cursor: not-allowed;
+}
+
+.signin-button:not(:disabled) {
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #3f177f 0%,
+      #4c1d95 55%,
+      #6630ba 100%
+    );
+
+  box-shadow:
+    0 12px 26px
+      rgba(76, 29, 149, 0.24);
+
+  cursor: pointer;
+}
+
+.signin-button:not(:disabled):hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 16px 32px
+      rgba(76, 29, 149, 0.29);
+}
+
+/* =========================
+   RESPONSIVE - LAPTOP
+========================= */
+
+@media (max-width: 1100px) {
+  .signin-visual {
+    padding:
+      34px
+      36px
+      0;
+  }
+
+  .visual-message {
+    margin-top: 27px;
+  }
+
+  .visual-message h2 {
+    font-size: 36px;
+  }
+
+  .visual-message p {
+    font-size: 11px;
+  }
+
+  .visual-illustration {
+    margin-top: 8px;
+  }
+}
+
+/* =========================
+   RESPONSIVE - SMALL LAPTOP
+========================= */
+
+@media (max-width: 950px) {
+  .signin-page {
+    padding: 22px;
+  }
+
+  .signin-shell {
+    height:
+      min(
+        700px,
+        calc(100vh - 44px)
+      );
+  }
+
+  .signin-visual {
+    padding:
+      32px
+      30px
+      0;
+  }
+
+  .visual-brand-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .visual-brand-copy h1 {
+    font-size: 21px;
+  }
+
+  .visual-message {
+    margin-top: 25px;
+  }
+
+  .visual-small-label {
+    margin-bottom: 10px;
+
+    font-size: 8px;
+  }
+
+  .visual-message h2 {
+    font-size: 32px;
+  }
+
+  .visual-message p {
+    margin-top: 11px;
+
+    font-size: 10px;
+    line-height: 1.5;
+  }
+
+  .signin-panel {
+    padding: 38px;
+  }
+
+  .signin-heading {
+    margin-bottom: 46px;
+  }
+
+  .signin-progress {
+    margin-bottom: 54px;
+  }
+}
+
+/* =========================
+   RESPONSIVE - TABLET
+========================= */
+
+@media (max-width: 760px) {
+  .signin-page {
+    height: auto;
+    min-height: 100vh;
+
+    padding: 18px;
+
+    overflow-y: auto;
+  }
+
+  .signin-shell {
+    height: auto;
+
+    min-height:
+      calc(100vh - 36px);
+
+    display: block;
+
+    border-radius: 22px;
+  }
+
+  .signin-visual {
+    display: none;
+  }
+
+  .signin-panel {
+    min-height:
+      calc(100vh - 36px);
+
+    padding:
+      50px
+      32px;
+  }
+
+  .signin-form-wrapper {
+    max-width: 480px;
+  }
+}
+
+/* =========================
+   RESPONSIVE - MOBILE
+========================= */
+
+@media (max-width: 520px) {
+  .signin-page {
+    padding: 0;
+
+    background: #ffffff;
+  }
+
+  .signin-shell {
+    min-height: 100vh;
+
+    border-radius: 0;
+
+    box-shadow: none;
+  }
+
+  .signin-panel {
+    min-height: 100vh;
+
+    padding:
+      42px
+      24px;
+  }
+
+  .signin-heading h2 {
+    font-size: 31px;
+  }
+
+  .signin-form {
+    gap: 24px;
+  }
+}
