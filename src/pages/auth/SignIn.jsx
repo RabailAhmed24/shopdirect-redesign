@@ -41,13 +41,16 @@ function SignIn() {
 
     if (!isFormValid) return;
 
-    navigate("/super-admin");
+    localStorage.setItem("shopdirect-auth", "true");
+
+    navigate("/super-admin", {
+      replace: true,
+    });
   }
 
   return (
     <main className="signin-page">
       <section className="signin-shell">
-        {/* LEFT SIDE */}
         <aside className="signin-visual">
           <div className="visual-shape visual-shape-one" />
           <div className="visual-shape visual-shape-two" />
@@ -83,7 +86,6 @@ function SignIn() {
               </p>
             </div>
 
-            {/* Illustration */}
             <div className="visual-illustration">
               <img
                 src="/shopdirect-login-illustration.png"
@@ -93,10 +95,8 @@ function SignIn() {
           </div>
         </aside>
 
-        {/* RIGHT SIDE */}
         <section className="signin-panel">
           <div className="signin-form-wrapper">
-            {/* Heading */}
             <div className="signin-heading">
               <h2>Welcome back</h2>
 
@@ -106,7 +106,6 @@ function SignIn() {
               </p>
             </div>
 
-            {/* Progress */}
             <div className="signin-progress">
               <div className="progress-track">
                 <div
@@ -144,7 +143,6 @@ function SignIn() {
               </div>
             </div>
 
-            {/* Form */}
             <form
               className="signin-form"
               onSubmit={handleSubmit}

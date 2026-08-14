@@ -5,6 +5,8 @@ import {
   Routes,
 } from "react-router-dom";
 
+import ProtectedRoute from "./routes/ProtectedRoute";
+
 import SuperAdminLayout from "./layouts/SuperAdminLayout";
 import SuperAdminDashboard from "./pages/super-admin/dashboard/SuperAdminDashboard";
 import SignIn from "./pages/auth/SignIn";
@@ -18,7 +20,12 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={<Navigate to="/login" replace />}
+          element={
+            <Navigate
+              to="/login"
+              replace
+            />
+          }
         />
 
         <Route
@@ -28,72 +35,125 @@ function App() {
 
         <Route
           path="/super-admin"
-          element={<SuperAdminLayout />}
+          element={
+            <ProtectedRoute>
+              <SuperAdminLayout />
+            </ProtectedRoute>
+          }
         >
           <Route
             index
-            element={<SuperAdminDashboard />}
+            element={
+              <SuperAdminDashboard />
+            }
           />
 
           <Route
             path="reports"
-            element={<ModulePlaceholder title="Reports" />}
+            element={
+              <ModulePlaceholder
+                title="Reports"
+              />
+            }
           />
 
           <Route
             path="income-statement"
-            element={<ModulePlaceholder title="Income Statement" />}
+            element={
+              <ModulePlaceholder
+                title="Income Statement"
+              />
+            }
           />
 
           <Route
             path="cash-flow"
-            element={<ModulePlaceholder title="Cash Flow Statement" />}
+            element={
+              <ModulePlaceholder
+                title="Cash Flow Statement"
+              />
+            }
           />
 
           <Route
             path="bank-accounts"
-            element={<ModulePlaceholder title="Bank Accounts" />}
+            element={
+              <ModulePlaceholder
+                title="Bank Accounts"
+              />
+            }
           />
 
           <Route
             path="invoices"
-            element={<ModulePlaceholder title="Invoice" />}
+            element={
+              <ModulePlaceholder
+                title="Invoice"
+              />
+            }
           />
 
           <Route
             path="users"
-            element={<ModulePlaceholder title="User Management" />}
+            element={
+              <ModulePlaceholder
+                title="User Management"
+              />
+            }
           />
 
           <Route
             path="investors"
-            element={<ModulePlaceholder title="Investors" />}
+            element={
+              <ModulePlaceholder
+                title="Investors"
+              />
+            }
           />
 
           <Route
             path="ai-hub"
-            element={<ModulePlaceholder title="AI Innovation Hub" />}
+            element={
+              <ModulePlaceholder
+                title="AI Innovation Hub"
+              />
+            }
           />
 
           <Route
             path="chat-monitoring"
-            element={<ModulePlaceholder title="Chat Monitoring" />}
+            element={
+              <ModulePlaceholder
+                title="Chat Monitoring"
+              />
+            }
           />
 
           <Route
             path="deleted-orders"
-            element={<ModulePlaceholder title="Deleted Orders" />}
+            element={
+              <ModulePlaceholder
+                title="Deleted Orders"
+              />
+            }
           />
 
           <Route
             path="*"
-            element={<SuperAdminNotFound />}
+            element={
+              <SuperAdminNotFound />
+            }
           />
         </Route>
 
         <Route
           path="*"
-          element={<Navigate to="/login" replace />}
+          element={
+            <Navigate
+              to="/login"
+              replace
+            />
+          }
         />
       </Routes>
     </BrowserRouter>

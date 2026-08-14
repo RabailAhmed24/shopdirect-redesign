@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+
 import {
   Bell,
   ChevronDown,
@@ -20,7 +21,8 @@ function SuperAdminTopbar() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
 
-  const normalizedQuery = query.trim().toLowerCase();
+  const normalizedQuery =
+    query.trim().toLowerCase();
 
   const searchResults = useMemo(() => {
     if (!normalizedQuery) {
@@ -35,7 +37,9 @@ function SuperAdminTopbar() {
         .join(" ")
         .toLowerCase();
 
-      return searchableText.includes(normalizedQuery);
+      return searchableText.includes(
+        normalizedQuery
+      );
     });
   }, [normalizedQuery]);
 
@@ -63,12 +67,26 @@ function SuperAdminTopbar() {
       }
     }
 
-    document.addEventListener("mousedown", handleOutsideClick);
-    document.addEventListener("keydown", handleEscape);
+    document.addEventListener(
+      "mousedown",
+      handleOutsideClick
+    );
+
+    document.addEventListener(
+      "keydown",
+      handleEscape
+    );
 
     return () => {
-      document.removeEventListener("mousedown", handleOutsideClick);
-      document.removeEventListener("keydown", handleEscape);
+      document.removeEventListener(
+        "mousedown",
+        handleOutsideClick
+      );
+
+      document.removeEventListener(
+        "keydown",
+        handleEscape
+      );
     };
   }, []);
 
@@ -85,7 +103,10 @@ function SuperAdminTopbar() {
 
     setQuery(value);
     setSelectedIndex(0);
-    setIsSearchOpen(value.trim().length > 0);
+
+    setIsSearchOpen(
+      value.trim().length > 0
+    );
   }
 
   function handleSearchKeyDown(event) {
@@ -94,7 +115,10 @@ function SuperAdminTopbar() {
       return;
     }
 
-    if (!isSearchOpen || searchResults.length === 0) {
+    if (
+      !isSearchOpen ||
+      searchResults.length === 0
+    ) {
       return;
     }
 
@@ -102,7 +126,8 @@ function SuperAdminTopbar() {
       event.preventDefault();
 
       setSelectedIndex((currentIndex) =>
-        currentIndex >= searchResults.length - 1
+        currentIndex >=
+        searchResults.length - 1
           ? 0
           : currentIndex + 1
       );
@@ -125,12 +150,25 @@ function SuperAdminTopbar() {
     if (event.key === "Enter") {
       event.preventDefault();
 
-      const selectedModule = searchResults[selectedIndex];
+      const selectedModule =
+        searchResults[selectedIndex];
 
       if (selectedModule) {
         openModule(selectedModule);
       }
     }
+  }
+
+  function handleSignOut() {
+    localStorage.removeItem(
+      "shopdirect-auth"
+    );
+
+    setIsProfileOpen(false);
+
+    navigate("/login", {
+      replace: true,
+    });
   }
 
   return (
@@ -140,7 +178,10 @@ function SuperAdminTopbar() {
         ref={searchAreaRef}
       >
         <div className="topbar-search">
-          <Search size={17} strokeWidth={1.8} />
+          <Search
+            size={17}
+            strokeWidth={1.8}
+          />
 
           <input
             id="workspace-search"
@@ -163,27 +204,40 @@ function SuperAdminTopbar() {
         {isSearchOpen && (
           <div className="workspace-search-dropdown">
             {searchResults.length > 0 ? (
-              searchResults.map((module, index) => {
-                const Icon = module.icon;
+              searchResults.map(
+                (module, index) => {
+                  const Icon = module.icon;
 
-                return (
-                  <button
-                    key={module.route}
-                    type="button"
-                    className={`workspace-search-result${
-                      index === selectedIndex ? " selected" : ""
-                    }`}
-                    onMouseEnter={() => setSelectedIndex(index)}
-                    onClick={() => openModule(module)}
-                  >
-                    <span className="search-result-icon">
-                      <Icon size={17} strokeWidth={1.8} />
-                    </span>
+                  return (
+                    <button
+                      key={module.route}
+                      type="button"
+                      className={`workspace-search-result${
+                        index === selectedIndex
+                          ? " selected"
+                          : ""
+                      }`}
+                      onMouseEnter={() =>
+                        setSelectedIndex(index)
+                      }
+                      onClick={() =>
+                        openModule(module)
+                      }
+                    >
+                      <span className="search-result-icon">
+                        <Icon
+                          size={17}
+                          strokeWidth={1.8}
+                        />
+                      </span>
 
-                    <span>{module.name}</span>
-                  </button>
-                );
-              })
+                      <span>
+                        {module.name}
+                      </span>
+                    </button>
+                  );
+                }
+              )
             ) : (
               <div className="workspace-search-empty">
                 No results found.
@@ -199,7 +253,10 @@ function SuperAdminTopbar() {
           className="notification-button"
           aria-label="Notifications"
         >
-          <Bell size={19} strokeWidth={1.8} />
+          <Bell
+            size={19}
+            strokeWidth={1.8}
+          />
         </button>
 
         <div
@@ -212,20 +269,24 @@ function SuperAdminTopbar() {
               isProfileOpen ? " open" : ""
             }`}
             onClick={() =>
-              setIsProfileOpen((prev) => !prev)
+              setIsProfileOpen(
+                (previous) => !previous
+              )
             }
             aria-expanded={isProfileOpen}
             aria-haspopup="menu"
           >
-            <div className="profile-avatar">SA</div>
+            <div className="profile-avatar">
+              SA
+            </div>
 
             <div className="profile-info">
               <span className="profile-name">
                 Super Admin
               </span>
 
-              <span className="profile-role">
-                Administrator
+              <span className="profile-role profile-status">
+                Signed in
               </span>
             </div>
 
@@ -245,11 +306,13 @@ function SuperAdminTopbar() {
                 type="button"
                 className="signout-button"
                 role="menuitem"
+                onClick={handleSignOut}
               >
                 <LogOut
                   size={16}
                   strokeWidth={1.8}
                 />
+
                 <span>Sign out</span>
               </button>
             </div>
