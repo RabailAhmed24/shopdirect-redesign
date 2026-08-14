@@ -11,7 +11,9 @@ import { superAdminModules } from "../../data/superAdminModules";
 
 function SuperAdminTopbar() {
   const navigate = useNavigate();
+
   const searchAreaRef = useRef(null);
+  const profileMenuRef = useRef(null);
 
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [query, setQuery] = useState("");
@@ -45,12 +47,28 @@ function SuperAdminTopbar() {
       ) {
         setIsSearchOpen(false);
       }
+
+      if (
+        profileMenuRef.current &&
+        !profileMenuRef.current.contains(event.target)
+      ) {
+        setIsProfileOpen(false);
+      }
+    }
+
+    function handleEscape(event) {
+      if (event.key === "Escape") {
+        setIsSearchOpen(false);
+        setIsProfileOpen(false);
+      }
     }
 
     document.addEventListener("mousedown", handleOutsideClick);
+    document.addEventListener("keydown", handleEscape);
 
     return () => {
       document.removeEventListener("mousedown", handleOutsideClick);
+      document.removeEventListener("keydown", handleEscape);
     };
   }, []);
 
@@ -184,7 +202,10 @@ function SuperAdminTopbar() {
           <Bell size={19} strokeWidth={1.8} />
         </button>
 
-        <div className="profile-menu">
+        <div
+          className="profile-menu"
+          ref={profileMenuRef}
+        >
           <button
             type="button"
             className={`topbar-profile${
@@ -194,6 +215,7 @@ function SuperAdminTopbar() {
               setIsProfileOpen((prev) => !prev)
             }
             aria-expanded={isProfileOpen}
+            aria-haspopup="menu"
           >
             <div className="profile-avatar">SA</div>
 
@@ -215,13 +237,17 @@ function SuperAdminTopbar() {
           </button>
 
           {isProfileOpen && (
-            <div className="profile-dropdown">
+            <div
+              className="profile-dropdown"
+              role="menu"
+            >
               <button
                 type="button"
                 className="signout-button"
+                role="menuitem"
               >
                 <LogOut
-                  size={17}
+                  size={16}
                   strokeWidth={1.8}
                 />
                 <span>Sign out</span>

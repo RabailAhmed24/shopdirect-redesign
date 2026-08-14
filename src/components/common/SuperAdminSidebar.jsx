@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+
 import {
   LayoutDashboard,
   BarChart3,
@@ -11,6 +12,8 @@ import {
   Sparkles,
   MessagesSquare,
   Trash2,
+  Menu,
+  ChevronLeft,
 } from "lucide-react";
 
 const navigationItems = [
@@ -72,16 +75,36 @@ const navigationItems = [
   },
 ];
 
-function SuperAdminSidebar() {
+function SuperAdminSidebar({ isOpen, onToggle }) {
   return (
     <aside className="super-admin-sidebar">
       <div className="sidebar-brand">
-        <div className="brand-mark">S</div>
+        <div className="sidebar-brand-main">
+          <div className="brand-mark">S</div>
 
-        <div>
-          <h2>ShopDirect</h2>
-          <span>Super Admin</span>
+          <div className="brand-copy">
+            <h2>ShopDirect</h2>
+            <span>Super Admin</span>
+          </div>
         </div>
+
+        <button
+          type="button"
+          className="sidebar-close-button"
+          onClick={onToggle}
+          aria-label={
+            isOpen ? "Collapse sidebar" : "Expand sidebar"
+          }
+          title={
+            isOpen ? "Collapse sidebar" : "Expand sidebar"
+          }
+        >
+          {isOpen ? (
+            <ChevronLeft size={19} strokeWidth={1.9} />
+          ) : (
+            <Menu size={20} strokeWidth={1.9} />
+          )}
+        </button>
       </div>
 
       <nav className="sidebar-nav">
@@ -90,6 +113,7 @@ function SuperAdminSidebar() {
             key={path}
             to={path}
             end={end}
+            title={!isOpen ? label : undefined}
             className={({ isActive }) =>
               `sidebar-link${isActive ? " active" : ""}`
             }

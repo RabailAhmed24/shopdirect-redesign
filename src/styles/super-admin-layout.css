@@ -13,23 +13,26 @@ body,
 body {
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
+
   background: #3f177f;
   color: #182230;
 }
 
 /* ========================================
-    SUPER ADMIN SHELL
+   SUPER ADMIN SHELL
 ======================================== */
 
 .super-admin-layout {
   position: relative;
+
   width: 100%;
   min-height: 100vh;
+
   background: #3f177f;
 }
 
 /* ========================================
-    MAIN WORKSPACE
+   MAIN WORKSPACE
 ======================================== */
 
 .super-admin-main {
@@ -44,10 +47,24 @@ body {
   padding-right: 16px;
 
   background: #3f177f;
+
+  transition:
+    margin-left 0.22s ease,
+    width 0.22s ease;
 }
 
 /* ========================================
-    TOP BAR
+   COLLAPSED SIDEBAR LAYOUT
+======================================== */
+
+.super-admin-layout.sidebar-collapsed .super-admin-main {
+  width: calc(100% - 76px);
+
+  margin-left: 76px;
+}
+
+/* ========================================
+   TOP BAR
 ======================================== */
 
 .super-admin-topbar {
@@ -71,7 +88,7 @@ body {
 }
 
 /* ========================================
-    PAGE CONTENT
+   PAGE CONTENT
 ======================================== */
 
 .super-admin-content {
@@ -91,163 +108,7 @@ body {
 }
 
 /* ========================================
-    SIDEBAR
-======================================== */
-
-.super-admin-sidebar {
-  position: fixed;
-
-  top: 0;
-  left: 0;
-
-  width: 240px;
-  height: 100vh;
-
-  display: flex;
-  flex-direction: column;
-
-  padding: 20px 0 14px 16px;
-
-  background: #3f177f;
-
-  overflow: visible;
-
-  z-index: 100;
-}
-
-/* ========================================
-    BRAND
-======================================== */
-
-.sidebar-brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-
-  flex-shrink: 0;
-
-  padding: 4px 16px 16px 8px;
-
-  margin-right: 16px;
-  margin-bottom: 10px;
-
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-.brand-mark {
-  width: 42px;
-  height: 42px;
-
-  display: grid;
-  place-items: center;
-
-  flex-shrink: 0;
-
-  border-radius: 12px;
-
-  background: #ffffff;
-  color: #4c1d95;
-
-  font-size: 20px;
-  font-weight: 700;
-}
-
-.sidebar-brand h2 {
-  margin: 0;
-
-  color: #ffffff;
-
-  font-size: 18px;
-  font-weight: 700;
-}
-
-.sidebar-brand div > span {
-  display: block;
-
-  margin-top: 3px;
-
-  color: rgba(255, 255, 255, 0.58);
-
-  font-size: 11px;
-  font-weight: 600;
-
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-/* ========================================
-    SIDEBAR NAVIGATION
-======================================== */
-
-.sidebar-nav {
-  position: relative;
-
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-
-  flex: 1;
-  min-height: 0;
-
-  overflow: visible;
-}
-
-.sidebar-link {
-  position: relative;
-
-  display: flex;
-  align-items: center;
-  gap: 12px;
-
-  width: calc(100% - 16px);
-  min-height: 40px;
-
-  flex-shrink: 0;
-
-  padding: 8px 14px;
-
-  border-radius: 999px;
-
-  color: rgba(255, 255, 255, 0.72);
-  text-decoration: none;
-
-  font-size: 13.5px;
-  font-weight: 500;
-
-  transition:
-    background 0.2s ease,
-    color 0.2s ease;
-}
-
-.sidebar-link:hover {
-  background: rgba(255, 255, 255, 0.08);
-  color: #ffffff;
-  border-radius: 999px;
-}
-
-.sidebar-link svg {
-  flex-shrink: 0;
-}
-
-/* ========================================
-    ACTIVE SIDEBAR ITEM
-======================================== */
-
-.sidebar-link.active {
-  width: calc(100% - 16px);
-
-  background: #f7f8fc;
-  color: #4c1d95;
-
-  border-radius: 999px;
-
-  font-weight: 600;
-
-  z-index: 120;
-}
-
-/* ========================================
-    SEARCH
+   SEARCH
 ======================================== */
 
 .topbar-search {
@@ -299,7 +160,7 @@ body {
 }
 
 /* ========================================
-    TOP BAR ACTIONS
+   TOP BAR ACTIONS
 ======================================== */
 
 .topbar-actions {
@@ -339,7 +200,7 @@ body {
 }
 
 /* ========================================
-    PROFILE MENU
+   PROFILE MENU
 ======================================== */
 
 .profile-menu {
@@ -433,27 +294,27 @@ body {
 }
 
 /* ========================================
-    PROFILE DROPDOWN
+   PROFILE DROPDOWN
 ======================================== */
 
 .profile-dropdown {
   position: absolute;
 
-  top: calc(100% + 8px);
+  top: calc(100% + 6px);
   right: 0;
 
-  width: 168px;
+  width: 148px;
 
-  padding: 6px;
+  padding: 5px;
 
   background: #ffffff;
 
-  border: 1px solid #ebe7f1;
-  border-radius: 12px;
+  border: 1px solid #eee9f4;
+  border-radius: 10px;
 
   box-shadow:
-    0 10px 30px rgba(31, 20, 55, 0.1),
-    0 2px 8px rgba(31, 20, 55, 0.06);
+    0 8px 20px rgba(31, 20, 55, 0.08),
+    0 2px 6px rgba(31, 20, 55, 0.04);
 
   z-index: 300;
 }
@@ -463,34 +324,45 @@ body {
 
   display: flex;
   align-items: center;
-  gap: 9px;
+  gap: 8px;
 
-  padding: 10px 11px;
+  padding: 8px 10px;
 
   border: none;
-  border-radius: 8px;
+  border-radius: 7px;
 
   background: transparent;
   color: #344054;
 
   font: inherit;
-  font-size: 13px;
+  font-size: 12.5px;
   font-weight: 500;
 
   cursor: pointer;
 
   transition:
-    background 0.2s ease,
-    color 0.2s ease;
+    background 0.18s ease,
+    color 0.18s ease,
+    transform 0.18s ease;
+}
+
+.signout-button svg {
+  flex-shrink: 0;
+
+  transition: transform 0.18s ease;
 }
 
 .signout-button:hover {
-  background: #f6f2ff;
-  color: #4c1d95;
+  background: #fff3e8;
+  color: #c96a1b;
+}
+
+.signout-button:hover svg {
+  transform: translateX(2px);
 }
 
 /* ========================================
-    DASHBOARD
+   DASHBOARD
 ======================================== */
 
 .dashboard-page {
@@ -503,11 +375,12 @@ body {
 }
 
 /* ========================================
-    WORKSPACE SEARCH DROPDOWN
+   WORKSPACE SEARCH DROPDOWN
 ======================================== */
 
 .workspace-search {
   position: relative;
+
   width: 340px;
 }
 
@@ -593,4 +466,18 @@ body {
 
   font-size: 13px;
   text-align: center;
+}
+
+/* ========================================
+   RESPONSIVE SAFETY
+======================================== */
+
+@media (max-width: 900px) {
+  .workspace-search {
+    width: 280px;
+  }
+
+  .topbar-search {
+    width: 280px;
+  }
 }
