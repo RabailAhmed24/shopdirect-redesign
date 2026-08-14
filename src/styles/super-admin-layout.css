@@ -1,7 +1,7 @@
 * {
   box-sizing: border-box;
 }
- 
+
 html,
 body,
 #root {
@@ -9,654 +9,473 @@ body,
   width: 100%;
   min-height: 100%;
 }
- 
+
 body {
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
   background: #3f177f;
   color: #182230;
 }
- 
+
 /* ========================================
-   SUPER ADMIN SHELL
+    SUPER ADMIN SHELL
 ======================================== */
- 
+
 .super-admin-layout {
   position: relative;
   width: 100%;
   min-height: 100vh;
   background: #3f177f;
 }
- 
+
 /* ========================================
-   MAIN WORKSPACE
+    MAIN WORKSPACE
 ======================================== */
- 
+
 .super-admin-main {
   position: relative;
- 
   width: calc(100% - 240px);
   min-height: 100vh;
- 
   margin-left: 240px;
- 
   padding-top: 16px;
   padding-right: 16px;
- 
   background: #3f177f;
 }
- 
+
 /* ========================================
-   TOP BAR
+    TOP BAR
 ======================================== */
- 
+
 .super-admin-topbar {
   position: relative;
- 
   width: 100%;
   height: 76px;
- 
   display: flex;
   align-items: center;
   justify-content: space-between;
- 
   padding: 0 26px 0 32px;
- 
   background: #ffffff;
- 
   border: none;
   border-radius: 24px 24px 0 0;
- 
   z-index: 20;
 }
- 
+
 /* ========================================
-   PAGE CONTENT
+    PAGE CONTENT
 ======================================== */
- 
+
 .super-admin-content {
   position: relative;
- 
   width: 100%;
   min-height: calc(100vh - 92px);
- 
   padding: 32px;
- 
   background: #f7f8fc;
- 
   border: none;
   border-radius: 0;
- 
   z-index: 5;
 }
- 
+
 /* ========================================
-   SIDEBAR
+    SIDEBAR
 ======================================== */
- 
+
 .super-admin-sidebar {
   position: fixed;
- 
   top: 0;
   left: 0;
- 
   width: 240px;
   height: 100vh;
- 
   display: flex;
   flex-direction: column;
- 
   padding: 20px 0 14px 16px;
- 
   background: #3f177f;
- 
   overflow: visible;
- 
   z-index: 100;
 }
- 
+
 /* ========================================
-   BRAND
+    BRAND
 ======================================== */
- 
+
 .sidebar-brand {
   display: flex;
   align-items: center;
   gap: 12px;
- 
   flex-shrink: 0;
- 
   padding: 4px 16px 16px 8px;
- 
   margin-right: 16px;
   margin-bottom: 10px;
- 
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
- 
+
 .brand-mark {
   width: 42px;
   height: 42px;
- 
   display: grid;
   place-items: center;
- 
   flex-shrink: 0;
- 
   border-radius: 12px;
- 
   background: #ffffff;
   color: #4c1d95;
- 
   font-size: 20px;
   font-weight: 700;
 }
- 
+
 .sidebar-brand h2 {
   margin: 0;
- 
   color: #ffffff;
- 
   font-size: 18px;
   font-weight: 700;
 }
- 
+
 .sidebar-brand div > span {
   display: block;
- 
   margin-top: 3px;
- 
   color: rgba(255, 255, 255, 0.58);
- 
   font-size: 11px;
   font-weight: 600;
- 
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
- 
+
 /* ========================================
-   SIDEBAR NAVIGATION
+    SIDEBAR NAVIGATION
 ======================================== */
- 
+
 .sidebar-nav {
   position: relative;
- 
   display: flex;
   flex-direction: column;
   gap: 3px;
- 
   flex: 1;
   min-height: 0;
- 
   overflow: visible;
 }
- 
+
 .sidebar-link {
   position: relative;
- 
   display: flex;
   align-items: center;
   gap: 12px;
- 
-  width: calc(100% - 16px);
+  width: 100%;
   min-height: 40px;
- 
   flex-shrink: 0;
- 
   padding: 8px 14px;
- 
-  border-radius: 999px;
- 
+  border-radius: 999px 0 0 999px;
   color: rgba(255, 255, 255, 0.72);
   text-decoration: none;
- 
   font-size: 13.5px;
   font-weight: 500;
- 
-  transition:
-    background 0.2s ease,
-    color 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease;
 }
- 
+
 .sidebar-link:hover {
   background: rgba(255, 255, 255, 0.08);
   color: #ffffff;
-  border-radius: 999px;
 }
- 
+
 .sidebar-link svg {
   flex-shrink: 0;
 }
- 
+
 /* ========================================
-   ACTIVE SIDEBAR ITEM
+    ACTIVE SIDEBAR ITEM (Smooth Oval Merge)
 ======================================== */
- 
+
 .sidebar-link.active {
-  --merge-depth: 18px;
-  --curve-size: 12px;
- 
-  position: relative;
- 
-  width: calc(100% + var(--merge-depth));
- 
-  margin-block: 5px;
- 
+  width: calc(100% + 16px);
   background: #f7f8fc;
   color: #4c1d95;
- 
   border-radius: 999px 0 0 999px;
- 
   font-weight: 600;
- 
   z-index: 120;
 }
- 
+
 .sidebar-link.active::before {
   content: "";
-
   position: absolute;
-
-  top: calc(var(--curve-size) * -1);
-  right: var(--merge-depth);
-
-  width: var(--curve-size);
-  height: var(--curve-size);
-
-  background: radial-gradient(
-    circle at bottom right,
-    transparent var(--curve-size),
-    #3f177f calc(var(--curve-size) + 1px)
-  );
-
-  pointer-events: none;
+  top: -16px;
+  right: 16px;
+  width: 16px;
+  height: 16px;
+  background: transparent;
+  border-bottom-right-radius: 16px;
+  box-shadow: 4px 4px 0 4px #f7f8fc;
 }
 
 .sidebar-link.active::after {
   content: "";
-
   position: absolute;
-
-  right: var(--merge-depth);
-  bottom: calc(var(--curve-size) * -1);
-
-  width: var(--curve-size);
-  height: var(--curve-size);
-
-  background: radial-gradient(
-    circle at top right,
-    transparent var(--curve-size),
-    #3f177f calc(var(--curve-size) + 1px)
-  );
-
-  pointer-events: none;
+  bottom: -16px;
+  right: 16px;
+  width: 16px;
+  height: 16px;
+  background: transparent;
+  border-top-right-radius: 16px;
+  box-shadow: 4px -4px 0 4px #f7f8fc;
 }
 
-.sidebar-link.active::after {
-  content: "";
- 
-  position: absolute;
- 
-  right: var(--merge-depth);
-  bottom: calc(var(--curve-size) * -1);
- 
-  width: var(--curve-size);
-  height: var(--curve-size);
- 
-  background: #3f177f;
- 
-  border-top-right-radius: var(--curve-size);
- 
-  pointer-events: none;
-}
- 
 /* ========================================
-   SEARCH
+    SEARCH
 ======================================== */
- 
+
 .topbar-search {
   width: 340px;
   height: 44px;
- 
   display: flex;
   align-items: center;
   gap: 10px;
- 
   padding: 0 18px;
- 
   background: #f7f5fb;
- 
   border: 1px solid #ebe6f5;
   border-radius: 999px;
- 
   color: #7b8494;
- 
-  transition:
-    background 0.2s ease,
-    border-color 0.2s ease,
-    box-shadow 0.2s ease;
+  transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
- 
+
 .topbar-search:focus-within {
   background: #ffffff;
   border-color: #cfc4f7;
- 
   box-shadow: 0 0 0 3px rgba(105, 56, 239, 0.08);
 }
- 
+
 .topbar-search input {
   width: 100%;
- 
   border: none;
   outline: none;
- 
   background: transparent;
- 
   color: #182230;
- 
   font: inherit;
   font-size: 14px;
 }
- 
+
 .topbar-search input::placeholder {
   color: #98a2b3;
 }
- 
+
 /* ========================================
-   TOP BAR ACTIONS
+    TOP BAR ACTIONS
 ======================================== */
- 
+
 .topbar-actions {
   display: flex;
   align-items: center;
   gap: 12px;
 }
- 
+
 .notification-button {
   width: 42px;
   height: 42px;
- 
   display: flex;
   align-items: center;
   justify-content: center;
- 
   flex-shrink: 0;
- 
   border: 1px solid #ebe7f3;
   border-radius: 50%;
- 
   background: #ffffff;
   color: #475467;
- 
   cursor: pointer;
- 
-  transition:
-    background 0.2s ease,
-    border-color 0.2s ease,
-    color 0.2s ease;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
- 
+
 .notification-button:hover {
   background: #f7f5fb;
   border-color: #ddd5f4;
   color: #4c1d95;
 }
- 
+
 /* ========================================
-   PROFILE MENU
+    PROFILE MENU
 ======================================== */
- 
+
 .profile-menu {
   position: relative;
 }
- 
+
 .topbar-profile {
   height: 44px;
   min-height: 44px;
- 
   display: flex;
   align-items: center;
   gap: 9px;
- 
   padding: 4px 13px 4px 5px;
- 
   border: none;
   border-radius: 999px;
- 
   background: #4c1d95;
   color: #ffffff;
- 
   cursor: pointer;
- 
   font: inherit;
   text-align: left;
- 
   transition: background 0.2s ease;
 }
- 
+
 .topbar-profile:hover,
 .topbar-profile.open {
   background: #3f177f;
 }
- 
+
 .profile-avatar {
   width: 34px;
   height: 34px;
- 
   display: flex;
   align-items: center;
   justify-content: center;
- 
   flex-shrink: 0;
- 
   border-radius: 50%;
- 
   background: #ffffff;
   color: #4c1d95;
- 
   font-size: 11px;
   font-weight: 700;
 }
- 
+
 .profile-info {
   min-width: 92px;
- 
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
- 
   gap: 1px;
 }
- 
+
 .profile-name {
   color: #ffffff;
- 
   font-size: 12.5px;
   font-weight: 600;
   line-height: 1.2;
 }
- 
+
 .profile-role {
   color: rgba(255, 255, 255, 0.66);
- 
   font-size: 10.5px;
   line-height: 1.2;
 }
- 
+
 .profile-chevron {
   margin-left: 1px;
- 
   color: rgba(255, 255, 255, 0.82);
- 
   transition: transform 0.2s ease;
 }
- 
+
 .topbar-profile.open .profile-chevron {
   transform: rotate(180deg);
 }
- 
+
 /* ========================================
-   PROFILE DROPDOWN
+    PROFILE DROPDOWN
 ======================================== */
- 
+
 .profile-dropdown {
   position: absolute;
- 
   top: calc(100% + 8px);
   right: 0;
- 
   width: 168px;
- 
   padding: 6px;
- 
   background: #ffffff;
- 
   border: 1px solid #ebe7f1;
   border-radius: 12px;
- 
-  box-shadow:
-    0 10px 30px rgba(31, 20, 55, 0.1),
+  box-shadow: 0 10px 30px rgba(31, 20, 55, 0.1),
     0 2px 8px rgba(31, 20, 55, 0.06);
- 
   z-index: 300;
 }
- 
+
 .signout-button {
   width: 100%;
- 
   display: flex;
   align-items: center;
   gap: 9px;
- 
   padding: 10px 11px;
- 
   border: none;
   border-radius: 8px;
- 
   background: transparent;
   color: #344054;
- 
   font: inherit;
   font-size: 13px;
   font-weight: 500;
- 
   cursor: pointer;
- 
-  transition:
-    background 0.2s ease,
-    color 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease;
 }
- 
+
 .signout-button:hover {
   background: #f6f2ff;
   color: #4c1d95;
 }
- 
+
 /* ========================================
-   DASHBOARD
+    DASHBOARD
 ======================================== */
- 
+
 .dashboard-page {
   position: relative;
- 
   width: 100%;
   min-height: 100%;
- 
   z-index: 1;
 }
- 
+
 /* ========================================
-   WORKSPACE SEARCH DROPDOWN
+    WORKSPACE SEARCH DROPDOWN
 ======================================== */
- 
+
 .workspace-search {
   position: relative;
   width: 340px;
 }
- 
+
 .workspace-search .topbar-search {
   width: 100%;
 }
- 
+
 .workspace-search-dropdown {
   position: absolute;
- 
   top: calc(100% + 8px);
   left: 0;
- 
   width: 100%;
- 
   padding: 6px;
- 
   background: #ffffff;
- 
   border: 1px solid #ebe7f1;
   border-radius: 14px;
- 
-  box-shadow:
-    0 14px 34px rgba(31, 20, 55, 0.12),
+  box-shadow: 0 14px 34px rgba(31, 20, 55, 0.12),
     0 3px 10px rgba(31, 20, 55, 0.06);
- 
   z-index: 400;
 }
- 
+
 .workspace-search-result {
   width: 100%;
- 
   display: flex;
   align-items: center;
   gap: 10px;
- 
   padding: 9px 10px;
- 
-  border: none;
+  border: none; /* Fixed: removed accidental dot */
   border-radius: 9px;
- 
   background: transparent;
   color: #344054;
- 
   font: inherit;
   font-size: 13px;
   font-weight: 500;
- 
   text-align: left;
- 
   cursor: pointer;
- 
-  transition:
-    background 0.2s ease,
-    color 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease;
 }
- 
+
 .workspace-search-result:hover,
 .workspace-search-result.selected {
   background: #f4effc;
   color: #4c1d95;
 }
- 
+
 .search-result-icon {
   width: 30px;
   height: 30px;
- 
   display: grid;
   place-items: center;
- 
   flex-shrink: 0;
- 
   border-radius: 8px;
- 
   background: #eee7fa;
   color: #4c1d95;
 }
- 
+
 .workspace-search-empty {
   padding: 14px 10px;
- 
   color: #8a8495;
- 
   font-size: 13px;
   text-align: center;
 }
- 
