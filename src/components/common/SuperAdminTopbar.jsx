@@ -125,6 +125,8 @@ function SuperAdminTopbar() {
           <Search size={17} strokeWidth={1.8} />
 
           <input
+            id="workspace-search"
+            name="workspace-search"
             type="text"
             value={query}
             placeholder="Search across workspace..."
