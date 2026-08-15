@@ -1026,10 +1026,21 @@ body:has(.reports-calendar-overlay) {
     );
 
   color: #ffffff;
+
+  text-align: left;
+}
+
+/* Keep all header text aligned from the same left edge */
+.reports-calendar-modal-header > div:first-child {
+  flex: 1;
+  min-width: 0;
+
+  text-align: left;
 }
 
 .reports-calendar-eyebrow {
-  margin: 0 0 2px;
+  margin: 0 0 3px;
+  padding: 0;
 
   color: rgba(255, 255, 255, 0.68);
 
@@ -1037,28 +1048,38 @@ body:has(.reports-calendar-overlay) {
   font-weight: 750;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+
+  text-align: left;
 }
 
 .reports-calendar-modal-header h2 {
   margin: 0;
+  padding: 0;
 
   color: #ffffff;
 
   font-size: 15px;
   font-weight: 720;
   line-height: 1.2;
+
+  text-align: left;
 }
 
 .reports-calendar-modal-header span {
   display: block;
 
-  max-width: 205px;
-  margin-top: 3px;
+  max-width: none;
+
+  margin: 3px 0 0;
+  padding: 0;
 
   color: rgba(255, 255, 255, 0.72);
 
   font-size: 8.5px;
   line-height: 1.35;
+
+  white-space: nowrap;
+  text-align: left;
 }
 
 .reports-calendar-close {
