@@ -1,0 +1,1646 @@
+:root {
+  --dashboard-primary: #6b3fa0;
+  --dashboard-primary-dark: #4a2b70;
+  --dashboard-primary-light: #ede4f8;
+
+  --dashboard-success: #16a34a;
+  --dashboard-success-light: #dcfce7;
+
+  --dashboard-warning: #d97706;
+  --dashboard-warning-light: #fef3c7;
+
+  --dashboard-info: #2563eb;
+  --dashboard-info-light: #dbeafe;
+
+  --dashboard-neutral-900: #111827;
+  --dashboard-neutral-600: #4b5563;
+  --dashboard-neutral-400: #9ca3af;
+  --dashboard-neutral-200: #e5e7eb;
+  --dashboard-neutral-100: #f3f4f6;
+  --dashboard-neutral-50: #f9fafb;
+  --dashboard-white: #ffffff;
+}
+
+.dashboard-page {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 32px;
+  box-sizing: border-box;
+}
+
+/* COMMAND BAR */
+
+.dashboard-command-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.dashboard-command-info h1 {
+  margin: 0;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  color: var(--dashboard-neutral-900);
+}
+
+.dashboard-command-info p {
+  margin: 2px 0 0;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--dashboard-neutral-400);
+}
+
+.dashboard-period {
+  height: 40px;
+  min-width: 140px;
+  padding: 0 14px;
+  border: 1px solid var(--dashboard-neutral-200);
+  border-radius: 10px;
+  background: var(--dashboard-white);
+  color: var(--dashboard-neutral-900);
+  font-size: 13px;
+  cursor: pointer;
+  outline: none;
+}
+
+/* KPI GRID */
+
+.dashboard-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.dashboard-stat-card {
+  position: relative;
+  min-height: 190px;
+  padding: 20px;
+  overflow: hidden;
+  border: 1px solid transparent;
+  border-radius: 16px;
+  transition:
+    transform 150ms ease,
+    box-shadow 150ms ease;
+}
+
+.dashboard-stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(17, 24, 39, 0.08);
+}
+
+.dashboard-stat-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.dashboard-stat-icon {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.65);
+}
+
+.dashboard-stat-change {
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.dashboard-stat-label {
+  position: relative;
+  z-index: 2;
+  margin: 20px 0 4px;
+  font-size: 11px;
+  line-height: 16px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.dashboard-stat-card h2 {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  font-size: 28px;
+  line-height: 36px;
+  font-weight: 700;
+}
+
+.dashboard-stat-chart {
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 8px;
+  height: 58px;
+  opacity: 0.95;
+}
+
+/* PURPLE CARD */
+
+.dashboard-stat-purple {
+  background: linear-gradient(
+    135deg,
+    #f7f1ff 0%,
+    #ede1ff 100%
+  );
+  color: #5b21b6;
+  border-color: #e6d6fb;
+}
+
+.dashboard-stat-purple .dashboard-stat-label {
+  color: #6f5a84;
+}
+
+.dashboard-stat-purple h2 {
+  color: #241630;
+}
+
+/* BLUE CARD */
+
+.dashboard-stat-blue {
+  background: linear-gradient(
+    135deg,
+    #f0f7ff 0%,
+    #dfeeff 100%
+  );
+  color: #2563eb;
+  border-color: #d7e8ff;
+}
+
+.dashboard-stat-blue .dashboard-stat-label {
+  color: #5a6d86;
+}
+
+.dashboard-stat-blue h2 {
+  color: #14213a;
+}
+
+/* GREEN CARD */
+
+.dashboard-stat-green {
+  background: linear-gradient(
+    135deg,
+    #f0fbf4 0%,
+    #dcf7e7 100%
+  );
+  color: #16a34a;
+  border-color: #d3f0de;
+}
+
+.dashboard-stat-green .dashboard-stat-label {
+  color: #58705f;
+}
+
+.dashboard-stat-green h2 {
+  color: #13291a;
+}
+
+/* AMBER CARD */
+
+.dashboard-stat-amber {
+  background: linear-gradient(
+    135deg,
+    #fff9ed 0%,
+    #fff0c9 100%
+  );
+  color: #d97706;
+  border-color: #f6e5ba;
+}
+
+.dashboard-stat-amber .dashboard-stat-label {
+  color: #7d6848;
+}
+
+.dashboard-stat-amber h2 {
+  color: #33230d;
+}
+
+/* MAIN CARDS */
+
+.dashboard-card {
+  background: var(--dashboard-white);
+  border: 1px solid var(--dashboard-neutral-200);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.dashboard-main-grid,
+.dashboard-bottom-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(300px, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.dashboard-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.dashboard-card-eyebrow {
+  margin: 0 0 4px;
+  font-size: 11px;
+  line-height: 16px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--dashboard-neutral-400);
+}
+
+.dashboard-card-header h3 {
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  color: var(--dashboard-neutral-900);
+}
+
+.dashboard-link-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--dashboard-primary);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* CHART PLACEHOLDER */
+
+.dashboard-chart-placeholder {
+  height: 280px;
+  margin-top: 24px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background:
+    linear-gradient(
+      to bottom,
+      transparent 24%,
+      var(--dashboard-neutral-100) 25%,
+      transparent 26%,
+      transparent 49%,
+      var(--dashboard-neutral-100) 50%,
+      transparent 51%,
+      transparent 74%,
+      var(--dashboard-neutral-100) 75%,
+      transparent 76%
+    );
+}
+
+.dashboard-chart-placeholder span {
+  font-size: 12px;
+  color: var(--dashboard-neutral-400);
+}
+
+/* NETWORK + ATTENTION */
+
+.dashboard-list {
+  margin-top: 20px;
+}
+
+.dashboard-list > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 52px;
+  border-bottom: 1px solid var(--dashboard-neutral-100);
+}
+
+.dashboard-list > div:last-child {
+  border-bottom: none;
+}
+
+.dashboard-list span {
+  font-size: 14px;
+  color: var(--dashboard-neutral-600);
+}
+
+.dashboard-list strong {
+  font-size: 18px;
+  color: var(--dashboard-neutral-900);
+}
+
+/* FINANCE */
+
+.dashboard-finance-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.dashboard-finance-grid > div {
+  padding: 16px;
+  border-radius: 8px;
+  background: var(--dashboard-neutral-50);
+}
+
+.dashboard-finance-grid span {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--dashboard-neutral-600);
+}
+
+.dashboard-finance-grid strong {
+  display: block;
+  font-size: 18px;
+  color: var(--dashboard-neutral-900);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1100px) {
+  .dashboard-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dashboard-main-grid,
+  .dashboard-bottom-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .dashboard-page {
+    padding: 20px;
+  }
+
+  .dashboard-command-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dashboard-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-finance-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ===== DASHBOARD TOP HEADER FIX ===== */
+
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+
+  margin-bottom: 24px;
+  padding-top: 8px;
+}
+
+.dashboard-header-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.dashboard-title {
+  margin: 0;
+
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+
+  color: #111827;
+}
+
+.dashboard-title span {
+  color: #6b3fa0;
+}
+
+.dashboard-updated {
+  margin: 5px 0 0;
+
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 400;
+
+  color: #9ca3af;
+}
+
+.dashboard-header .dashboard-period {
+  flex-shrink: 0;
+
+  min-width: 140px;
+  height: 40px;
+
+  padding: 0 14px;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+
+  background: #ffffff;
+  color: #111827;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  cursor: pointer;
+}
+
+/* =========================================
+   SALES OVERVIEW CHART
+========================================= */
+
+.dashboard-sales-card {
+  min-height: 390px;
+}
+
+.dashboard-sales-chart {
+  width: 100%;
+  height: 260px;
+  margin-top: 18px;
+}
+
+.dashboard-chart-legend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 12px;
+
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.dashboard-chart-legend span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.legend-sales {
+  background: #6b3fa0;
+}
+
+.legend-cost {
+  background: #2563eb;
+}
+
+.legend-profit {
+  background: #16a34a;
+}
+
+/* =========================================================
+   FINANCIAL SNAPSHOT — PURPLE STAT CARD
+========================================================= */
+
+.dashboard-finance-card {
+  position: relative;
+  overflow: hidden;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background:
+    radial-gradient(circle at 90% 0%, rgba(167, 139, 250, 0.24), transparent 32%),
+    linear-gradient(135deg, #34116f 0%, #4b1b8f 55%, #5b21b6 100%);
+  box-shadow: 0 14px 32px rgba(58, 20, 112, 0.18);
+}
+
+.dashboard-finance-card::after {
+  content: "";
+  position: absolute;
+  right: -70px;
+  bottom: -90px;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.055);
+  pointer-events: none;
+}
+
+.dashboard-finance-header,
+.dashboard-finance-stats {
+  position: relative;
+  z-index: 1;
+}
+
+.dashboard-finance-card .dashboard-card-header h3 {
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.dashboard-finance-eyebrow {
+  color: #d8c7ff !important;
+}
+
+.dashboard-finance-subtitle {
+  margin: 6px 0 0;
+  max-width: 440px;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.dashboard-finance-icon {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 12px;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.dashboard-finance-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 18px;
+  margin-top: 26px;
+}
+
+.dashboard-finance-stat {
+  padding: 14px 15px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.dashboard-finance-stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 11px;
+}
+
+.dashboard-finance-stat-row span {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.dashboard-finance-stat-row strong {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.dashboard-finance-track {
+  height: 5px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.dashboard-finance-fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+}
+
+.finance-receivable {
+  background: #7dd3fc;
+}
+
+.finance-received {
+  background: #86efac;
+}
+
+.finance-payable {
+  background: #fbbf24;
+}
+
+.finance-hold {
+  background: #fb923c;
+}
+
+/* =========================================================
+   NEEDS ATTENTION — SOFT ALERT CARD
+========================================================= */
+
+.dashboard-attention-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #f3d8a1;
+  background:
+    radial-gradient(circle at 88% 4%, rgba(251, 191, 36, 0.14), transparent 34%),
+    linear-gradient(145deg, #fffaf0 0%, #fff6df 100%);
+  box-shadow: 0 10px 26px rgba(180, 112, 15, 0.07);
+  animation: dashboardAttentionPulse 3.2s ease-in-out infinite;
+}
+
+.dashboard-attention-glow {
+  position: absolute;
+  top: -55px;
+  right: -55px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: rgba(245, 158, 11, 0.08);
+  pointer-events: none;
+}
+
+.dashboard-attention-header,
+.dashboard-attention-list {
+  position: relative;
+  z-index: 1;
+}
+
+.dashboard-attention-card .dashboard-card-header h3 {
+  color: #2d2416;
+  font-size: 20px;
+}
+
+.dashboard-attention-eyebrow {
+  color: #b77815 !important;
+}
+
+.dashboard-attention-subtitle {
+  margin: 6px 0 0;
+  color: #9b7b48;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.dashboard-attention-icon {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 12px;
+  color: #d97706;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(217, 119, 6, 0.16);
+}
+
+.dashboard-attention-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.dashboard-attention-row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 36px 1fr auto;
+  align-items: center;
+  gap: 11px;
+  padding: 11px 12px;
+  border: 1px solid rgba(217, 119, 6, 0.12);
+  border-radius: 11px;
+  background: rgba(255, 255, 255, 0.72);
+  text-align: left;
+  cursor: pointer;
+  transition:
+    transform 150ms ease,
+    box-shadow 150ms ease,
+    border-color 150ms ease;
+}
+
+.dashboard-attention-row:hover {
+  transform: translateY(-1px);
+  border-color: rgba(217, 119, 6, 0.25);
+  box-shadow: 0 8px 18px rgba(120, 75, 10, 0.08);
+}
+
+.dashboard-attention-row-icon {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+}
+
+.attention-invoice .dashboard-attention-row-icon {
+  color: #d97706;
+  background: #fff1c7;
+}
+
+.attention-hold .dashboard-attention-row-icon {
+  color: #ea580c;
+  background: #ffedd5;
+}
+
+.attention-deleted .dashboard-attention-row-icon {
+  color: #6b7280;
+  background: #f3f4f6;
+}
+
+.dashboard-attention-copy {
+  min-width: 0;
+}
+
+.dashboard-attention-copy strong {
+  display: block;
+  color: #34291a;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.dashboard-attention-copy small {
+  display: block;
+  margin-top: 2px;
+  color: #9b7b48;
+  font-size: 10px;
+}
+
+.dashboard-attention-count {
+  min-width: 30px;
+  padding: 5px 8px;
+  border-radius: 999px;
+  color: #8a5106;
+  background: #fff0c2;
+  font-size: 12px;
+  font-weight: 800;
+  text-align: center;
+}
+
+@keyframes dashboardAttentionPulse {
+  0%,
+  100% {
+    box-shadow: 0 10px 26px rgba(180, 112, 15, 0.07);
+  }
+
+  50% {
+    box-shadow:
+      0 12px 30px rgba(180, 112, 15, 0.12),
+      0 0 0 3px rgba(245, 158, 11, 0.035);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dashboard-attention-card {
+    animation: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .dashboard-finance-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =========================================================
+   ONE-GO DASHBOARD POLISH
+   Append to the end of super-admin-dashboard.css
+========================================================= */
+
+/* 2. KPI hierarchy + interactivity */
+.dashboard-stat-card {
+  width: 100%;
+  border: 1px solid transparent;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+}
+
+.dashboard-stat-card:focus-visible {
+  outline: 3px solid rgba(107, 63, 160, 0.2);
+  outline-offset: 3px;
+}
+
+.dashboard-stat-active {
+  box-shadow:
+    0 12px 26px rgba(42, 24, 66, 0.08),
+    0 0 0 2px rgba(107, 63, 160, 0.16);
+  transform: translateY(-2px);
+}
+
+.dashboard-stat-risk {
+  border-left: 4px solid #d97706;
+  background:
+    linear-gradient(135deg, #fffaf0 0%, #fff0c9 100%);
+}
+
+.dashboard-stat-risk .dashboard-stat-icon {
+  width: 42px;
+  height: 42px;
+  color: #d97706;
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.dashboard-stat-risk-label {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  margin-top: 5px;
+  padding: 3px 7px;
+  border-radius: 999px;
+  color: #a35f08;
+  background: rgba(255, 255, 255, 0.7);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+/* 3 + 8. Chart context / connected metric controls */
+.dashboard-chart-context {
+  margin: 4px 0 0;
+  color: #9ca3af;
+  font-size: 11px;
+}
+
+.dashboard-metric-switcher {
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.dashboard-metric-switcher button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 9px;
+  border: 1px solid #eceaf0;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #74707b;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 150ms ease,
+    border-color 150ms ease,
+    transform 150ms ease;
+}
+
+.dashboard-metric-switcher button:hover {
+  transform: translateY(-1px);
+}
+
+.dashboard-metric-switcher button.is-active {
+  color: #2b153f;
+  border-color: #d8c7ea;
+  background: #f5f0fb;
+}
+
+/* 4. Network Overview */
+.dashboard-network-card {
+  background:
+    radial-gradient(circle at 90% 0%, rgba(107, 63, 160, 0.07), transparent 32%),
+    #ffffff;
+}
+
+.dashboard-network-subtitle {
+  margin: 4px 0 0;
+  color: #9ca3af;
+  font-size: 11px;
+}
+
+.dashboard-network-total {
+  min-width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  color: #5b21b6;
+  background: #f1e9fb;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.dashboard-network-bar {
+  display: flex;
+  width: 100%;
+  height: 10px;
+  overflow: hidden;
+  margin: 24px 0 20px;
+  border-radius: 999px;
+  background: #f3f4f6;
+}
+
+.dashboard-network-segment {
+  display: block;
+  height: 100%;
+}
+
+.network-purple {
+  background: #6b3fa0;
+}
+
+.network-blue {
+  background: #3b82f6;
+}
+
+.network-green {
+  background: #22c55e;
+}
+
+.dashboard-network-list {
+  display: grid;
+  gap: 10px;
+}
+
+.dashboard-network-row {
+  display: grid;
+  grid-template-columns: 38px 1fr auto;
+  align-items: center;
+  gap: 11px;
+  padding: 9px 0;
+  border-bottom: 1px solid #f0edf3;
+}
+
+.dashboard-network-row:last-child {
+  border-bottom: 0;
+}
+
+.dashboard-network-icon {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+}
+
+.network-icon-purple {
+  color: #6b3fa0;
+  background: #f1e9fb;
+}
+
+.network-icon-blue {
+  color: #2563eb;
+  background: #eaf2ff;
+}
+
+.network-icon-green {
+  color: #16a34a;
+  background: #e9f9ee;
+}
+
+.dashboard-network-copy strong {
+  display: block;
+  color: #27222e;
+  font-size: 13px;
+}
+
+.dashboard-network-copy small {
+  display: block;
+  margin-top: 2px;
+  color: #9ca3af;
+  font-size: 10px;
+}
+
+.dashboard-network-value {
+  color: #17131d;
+  font-size: 18px;
+}
+
+/* 5. Financial Snapshot */
+.dashboard-finance-card {
+  position: relative;
+  overflow: hidden;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background:
+    radial-gradient(circle at 90% 0%, rgba(167, 139, 250, 0.24), transparent 32%),
+    linear-gradient(135deg, #34116f 0%, #4b1b8f 55%, #5b21b6 100%);
+  box-shadow: 0 14px 32px rgba(58, 20, 112, 0.18);
+}
+
+.dashboard-finance-card::after {
+  content: "";
+  position: absolute;
+  right: -70px;
+  bottom: -90px;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.055);
+  pointer-events: none;
+}
+
+.dashboard-finance-header,
+.dashboard-finance-stats {
+  position: relative;
+  z-index: 1;
+}
+
+.dashboard-finance-card .dashboard-card-header h3 {
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.dashboard-finance-eyebrow {
+  color: #d8c7ff !important;
+}
+
+.dashboard-finance-subtitle {
+  margin: 6px 0 0;
+  max-width: 440px;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.dashboard-finance-icon {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 12px;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.dashboard-finance-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 18px;
+  margin-top: 26px;
+}
+
+.dashboard-finance-stat {
+  padding: 14px 15px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.dashboard-finance-stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 9px;
+}
+
+.dashboard-finance-stat-row span {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.dashboard-finance-stat-row strong {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.dashboard-finance-track {
+  height: 5px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.dashboard-finance-fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+}
+
+.finance-receivable {
+  background: #7dd3fc;
+}
+
+.finance-received {
+  background: #86efac;
+}
+
+.finance-payable {
+  background: #fbbf24;
+}
+
+.finance-onHold {
+  background: #fb923c;
+}
+
+.dashboard-finance-caption {
+  display: block;
+  margin-top: 8px;
+  color: rgba(255, 255, 255, 0.64);
+  font-size: 10px;
+}
+
+/* 6. Needs Attention severity */
+.dashboard-attention-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #f3d8a1;
+  background:
+    radial-gradient(circle at 88% 4%, rgba(251, 191, 36, 0.14), transparent 34%),
+    linear-gradient(145deg, #fffaf0 0%, #fff6df 100%);
+  box-shadow: 0 10px 26px rgba(180, 112, 15, 0.07);
+  animation: dashboardAttentionPulse 3.2s ease-in-out infinite;
+}
+
+.dashboard-attention-glow {
+  position: absolute;
+  top: -55px;
+  right: -55px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: rgba(245, 158, 11, 0.08);
+  pointer-events: none;
+}
+
+.dashboard-attention-header,
+.dashboard-attention-list {
+  position: relative;
+  z-index: 1;
+}
+
+.dashboard-attention-card .dashboard-card-header h3 {
+  color: #2d2416;
+  font-size: 20px;
+}
+
+.dashboard-attention-eyebrow {
+  color: #b77815 !important;
+}
+
+.dashboard-attention-subtitle {
+  margin: 6px 0 0;
+  color: #9b7b48;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.dashboard-attention-icon {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 12px;
+  color: #d97706;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(217, 119, 6, 0.16);
+}
+
+.dashboard-attention-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.dashboard-attention-row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 36px 1fr auto;
+  align-items: center;
+  gap: 11px;
+  padding: 11px 12px;
+  border: 1px solid rgba(217, 119, 6, 0.12);
+  border-radius: 11px;
+  background: rgba(255, 255, 255, 0.72);
+  text-align: left;
+  cursor: pointer;
+  transition:
+    transform 150ms ease,
+    box-shadow 150ms ease,
+    border-color 150ms ease;
+}
+
+.dashboard-attention-row:hover {
+  transform: translateY(-1px);
+  border-color: rgba(217, 119, 6, 0.25);
+  box-shadow: 0 8px 18px rgba(120, 75, 10, 0.08);
+}
+
+.dashboard-attention-row-icon {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+}
+
+.attention-invoice .dashboard-attention-row-icon {
+  color: #d97706;
+  background: #fff1c7;
+}
+
+.attention-hold .dashboard-attention-row-icon {
+  color: #ea580c;
+  background: #ffedd5;
+}
+
+.attention-deleted .dashboard-attention-row-icon {
+  color: #6b7280;
+  background: #f3f4f6;
+}
+
+.dashboard-attention-copy strong {
+  display: block;
+  color: #34291a;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.dashboard-attention-copy small {
+  display: block;
+  margin-top: 2px;
+  color: #9b7b48;
+  font-size: 10px;
+}
+
+.dashboard-attention-count {
+  min-width: 30px;
+  padding: 5px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.attention-count-warning {
+  color: #8a5106;
+  background: #fff0c2;
+}
+
+.attention-count-danger {
+  color: #b45309;
+  background: #fed7aa;
+}
+
+.attention-count-neutral {
+  color: #5f6570;
+  background: #eceff3;
+}
+
+/* 7. Sidebar icon normalization */
+.super-admin-sidebar svg {
+  stroke-width: 1.8;
+}
+
+@keyframes dashboardAttentionPulse {
+  0%,
+  100% {
+    box-shadow: 0 10px 26px rgba(180, 112, 15, 0.07);
+  }
+
+  50% {
+    box-shadow:
+      0 12px 30px rgba(180, 112, 15, 0.12),
+      0 0 0 3px rgba(245, 158, 11, 0.035);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dashboard-attention-card {
+    animation: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .dashboard-finance-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =========================================================
+   ROUND 2 UX FIXES
+   Append to the end of super-admin-dashboard.css
+========================================================= */
+
+/* 1. Eyebrow cleanup */
+.dashboard-sales-card .dashboard-card-eyebrow,
+.dashboard-network-card .dashboard-card-eyebrow,
+.dashboard-finance-card .dashboard-card-eyebrow {
+  display: none;
+}
+
+/* 2. Keep Current On Hold KPI equal-height */
+.dashboard-stat-value-row {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 36px;
+}
+
+.dashboard-stat-value-row h2 {
+  margin: 0;
+}
+
+.dashboard-stat-risk-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0;
+  padding: 4px 7px;
+  white-space: nowrap;
+  border-radius: 999px;
+  color: #a35f08;
+  background: rgba(255, 255, 255, 0.76);
+  font-size: 9px;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.dashboard-stat-risk-dot {
+  width: 6px;
+  height: 6px;
+  flex: 0 0 6px;
+  border-radius: 50%;
+  background: #d97706;
+}
+
+/* 3. Network navigation affordance */
+.dashboard-network-total {
+  border: 0;
+  cursor: pointer;
+  transition:
+    transform 150ms ease,
+    box-shadow 150ms ease,
+    background 150ms ease;
+}
+
+.dashboard-network-total:hover {
+  transform: translateY(-1px);
+  background: #e9ddf7;
+  box-shadow: 0 8px 18px rgba(107, 63, 160, 0.12);
+}
+
+.dashboard-network-row {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+  transition:
+    background 150ms ease,
+    transform 150ms ease;
+}
+
+.dashboard-network-row:hover {
+  background: #faf8fc;
+  transform: translateX(2px);
+}
+
+.dashboard-network-row:focus-visible,
+.dashboard-network-total:focus-visible {
+  outline: 3px solid rgba(107, 63, 160, 0.18);
+  outline-offset: 2px;
+}
+
+/* 4. Wallet icon removed — no decorative action slot */
+.dashboard-finance-header {
+  align-items: flex-start;
+}
+
+/* 5. Deleted Orders is audit-only, so reduce its visual priority */
+.attention-count-neutral {
+  min-width: 28px;
+  padding: 4px 7px;
+  color: #6b7280;
+  background: #eceff3;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.attention-deleted .dashboard-attention-copy strong {
+  color: #5f6570;
+  font-weight: 600;
+}
+
+.attention-deleted .dashboard-attention-copy small {
+  color: #9ca3af;
+}
+
+/* 6. Strong selected-state on chart metric pills */
+.dashboard-metric-switcher button {
+  border: 1px solid #e8e2ef;
+  background: #ffffff;
+  color: #77717e;
+}
+
+.dashboard-metric-switcher button.is-active {
+  color: #ffffff;
+  border-color: #6b3fa0;
+  background: #6b3fa0;
+  box-shadow: 0 6px 14px rgba(107, 63, 160, 0.18);
+}
+
+.dashboard-metric-switcher button.is-active .legend-dot {
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.34);
+}
+
+/* Maintain equal heights across paired bottom cards */
+.dashboard-bottom-grid {
+  align-items: stretch;
+}
+
+.dashboard-bottom-grid > .dashboard-card {
+  height: 100%;
+}
+
+/* Slightly tighten headers now that eyebrows are removed */
+.dashboard-sales-card .dashboard-card-header h3,
+.dashboard-network-card .dashboard-card-header h3,
+.dashboard-finance-card .dashboard-card-header h3 {
+  margin-top: 0;
+}
+
+
+/* =========================================================
+   ROUND 2 UX FIXES
+   Append to the end of super-admin-dashboard.css
+========================================================= */
+
+/* 1. Eyebrow cleanup */
+.dashboard-sales-card .dashboard-card-eyebrow,
+.dashboard-network-card .dashboard-card-eyebrow,
+.dashboard-finance-card .dashboard-card-eyebrow {
+  display: none;
+}
+
+/* 2. Keep Current On Hold KPI equal-height */
+.dashboard-stat-value-row {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 36px;
+}
+
+.dashboard-stat-value-row h2 {
+  margin: 0;
+}
+
+.dashboard-stat-risk-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0;
+  padding: 4px 7px;
+  white-space: nowrap;
+  border-radius: 999px;
+  color: #a35f08;
+  background: rgba(255, 255, 255, 0.76);
+  font-size: 9px;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.dashboard-stat-risk-dot {
+  width: 6px;
+  height: 6px;
+  flex: 0 0 6px;
+  border-radius: 50%;
+  background: #d97706;
+}
+
+/* 3. Network navigation affordance */
+.dashboard-network-total {
+  border: 0;
+  cursor: pointer;
+  transition:
+    transform 150ms ease,
+    box-shadow 150ms ease,
+    background 150ms ease;
+}
+
+.dashboard-network-total:hover {
+  transform: translateY(-1px);
+  background: #e9ddf7;
+  box-shadow: 0 8px 18px rgba(107, 63, 160, 0.12);
+}
+
+.dashboard-network-row {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+  transition:
+    background 150ms ease,
+    transform 150ms ease;
+}
+
+.dashboard-network-row:hover {
+  background: #faf8fc;
+  transform: translateX(2px);
+}
+
+.dashboard-network-row:focus-visible,
+.dashboard-network-total:focus-visible {
+  outline: 3px solid rgba(107, 63, 160, 0.18);
+  outline-offset: 2px;
+}
+
+/* 4. Wallet icon removed — no decorative action slot */
+.dashboard-finance-header {
+  align-items: flex-start;
+}
+
+/* 5. Deleted Orders is audit-only, so reduce its visual priority */
+.attention-count-neutral {
+  min-width: 28px;
+  padding: 4px 7px;
+  color: #6b7280;
+  background: #eceff3;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.attention-deleted .dashboard-attention-copy strong {
+  color: #5f6570;
+  font-weight: 600;
+}
+
+.attention-deleted .dashboard-attention-copy small {
+  color: #9ca3af;
+}
+
+/* 6. Strong selected-state on chart metric pills */
+.dashboard-metric-switcher button {
+  border: 1px solid #e8e2ef;
+  background: #ffffff;
+  color: #77717e;
+}
+
+.dashboard-metric-switcher button.is-active {
+  color: #ffffff;
+  border-color: #6b3fa0;
+  background: #6b3fa0;
+  box-shadow: 0 6px 14px rgba(107, 63, 160, 0.18);
+}
+
+.dashboard-metric-switcher button.is-active .legend-dot {
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.34);
+}
+
+/* Maintain equal heights across paired bottom cards */
+.dashboard-bottom-grid {
+  align-items: stretch;
+}
+
+.dashboard-bottom-grid > .dashboard-card {
+  height: 100%;
+}
+
+/* Slightly tighten headers now that eyebrows are removed */
+.dashboard-sales-card .dashboard-card-header h3,
+.dashboard-network-card .dashboard-card-header h3,
+.dashboard-finance-card .dashboard-card-header h3 {
+  margin-top: 0;
+}
+
+
+/* =========================================================
+   FINAL DASHBOARD TWEAKS
+========================================================= */
+
+/* Current On Hold already has amber/risk treatment; no extra badge needed */
+.dashboard-stat-risk-label,
+.dashboard-stat-risk-dot {
+  display: none !important;
+}
+
+/* Align Financial Snapshot title with subtitle/content */
+.dashboard-finance-header {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.dashboard-finance-header > div {
+  width: 100%;
+  text-align: left;
+}
+
+.dashboard-finance-card .dashboard-card-header h3,
+.dashboard-finance-subtitle {
+  margin-left: 0;
+  text-align: left;
+}
