@@ -6,9 +6,11 @@ import {
 } from "react-router-dom";
 
 import ProtectedRoute from "./routes/ProtectedRoute";
+import SuperAdminUsers from "./pages/super-admin/users/SuperAdminUsers";
 
 import SuperAdminLayout from "./layouts/SuperAdminLayout";
 import SuperAdminDashboard from "./pages/super-admin/dashboard/SuperAdminDashboard";
+import SuperAdminReports from "./pages/super-admin/reports/SuperAdminReports";
 import SignIn from "./pages/auth/SignIn";
 
 import ModulePlaceholder from "./components/common/ModulePlaceholder";
@@ -51,9 +53,7 @@ function App() {
           <Route
             path="reports"
             element={
-              <ModulePlaceholder
-                title="Reports"
-              />
+              <SuperAdminReports />
             }
           />
 
@@ -93,14 +93,10 @@ function App() {
             }
           />
 
-          <Route
-            path="users"
-            element={
-              <ModulePlaceholder
-                title="User Management"
-              />
-            }
-          />
+         <Route
+  path="users"
+  element={<SuperAdminUsers />}
+/>
 
           <Route
             path="investors"
