@@ -62,6 +62,7 @@ const navigationItems = [
     label: "AI Innovation Hub",
     path: "/super-admin/ai-hub",
     icon: Sparkles,
+    featured: true,
   },
   {
     label: "Chat Monitoring",
@@ -108,20 +109,32 @@ function SuperAdminSidebar({ isOpen, onToggle }) {
       </div>
 
       <nav className="sidebar-nav">
-        {navigationItems.map(({ label, path, icon: Icon, end }) => (
-          <NavLink
-            key={path}
-            to={path}
-            end={end}
-            title={!isOpen ? label : undefined}
-            className={({ isActive }) =>
-              `sidebar-link${isActive ? " active" : ""}`
-            }
-          >
-            <Icon size={18} strokeWidth={1.8} />
-            <span>{label}</span>
-          </NavLink>
-        ))}
+        {navigationItems.map(
+          ({ label, path, icon: Icon, end, featured }) => (
+            <NavLink
+              key={path}
+              to={path}
+              end={end}
+              title={!isOpen ? label : undefined}
+              className={({ isActive }) =>
+                `sidebar-link${isActive ? " active" : ""}${
+                  featured ? " sidebar-link-featured" : ""
+                }`
+              }
+            >
+              <Icon size={18} strokeWidth={1.8} />
+
+              <span>{label}</span>
+
+              {featured && (
+                <span
+                  className="sidebar-feature-dot"
+                  aria-hidden="true"
+                />
+              )}
+            </NavLink>
+          )
+        )}
       </nav>
     </aside>
   );
