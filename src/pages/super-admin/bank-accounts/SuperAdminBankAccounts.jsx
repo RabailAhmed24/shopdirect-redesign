@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import {
   AlertTriangle,
   Building2,
@@ -363,7 +364,8 @@ function SuperAdminBankAccounts() {
         )}
       </div>
 
-      {(modalMode === "add" || modalMode === "edit") && (
+      {(modalMode === "add" || modalMode === "edit") &&
+        createPortal(
         <div
           className="bank-modal-backdrop"
           onMouseDown={(event) => {
@@ -546,10 +548,13 @@ function SuperAdminBankAccounts() {
               </div>
             </form>
           </div>
-        </div>
-      )}
+        </div>,
+          document.body
+        )}
 
-      {modalMode === "delete" && selectedAccount && (
+      {modalMode === "delete" &&
+        selectedAccount &&
+        createPortal(
         <div
           className="bank-modal-backdrop"
           onMouseDown={(event) => {
@@ -616,8 +621,9 @@ function SuperAdminBankAccounts() {
               </button>
             </div>
           </div>
-        </div>
-      )}
+        </div>,
+          document.body
+        )}
     </section>
   );
 }

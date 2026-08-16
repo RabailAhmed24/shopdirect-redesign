@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { createPortal } from "react-dom";
 import { jsPDF } from "jspdf";
 import {
   CalendarDays,
@@ -863,7 +864,8 @@ function SuperAdminInvoices() {
       </section>
 
       {/* GENERATE INVOICE DRAWER */}
-      {showGenerator && (
+      {showGenerator &&
+        createPortal(
         <div
           className="invoice-drawer-overlay"
           onMouseDown={(event) => {
@@ -1141,11 +1143,13 @@ function SuperAdminInvoices() {
               </div>
             </form>
           </aside>
-        </div>
-      )}
+        </div>,
+          document.body
+        )}
 
       {/* VIEW INVOICE */}
-      {selectedInvoice && (
+      {selectedInvoice &&
+        createPortal(
         <div
           className="invoice-modal-overlay"
           onMouseDown={(event) => {
@@ -1248,8 +1252,9 @@ function SuperAdminInvoices() {
               </button>
             </div>
           </div>
-        </div>
-      )}
+        </div>,
+          document.body
+        )}
     </section>
   );
 }

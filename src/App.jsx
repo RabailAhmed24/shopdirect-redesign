@@ -16,7 +16,9 @@ import SuperAdminCashFlow from "./pages/super-admin/cash-flow/SuperAdminCashFlow
 import SuperAdminBankAccounts from "./pages/super-admin/bank-accounts/SuperAdminBankAccounts";
 import SuperAdminInvoices from "./pages/super-admin/invoices/SuperAdminInvoices";
 import SuperAdminUsers from "./pages/super-admin/users/SuperAdminUsers";
+import SuperAdminInvestors from "./pages/super-admin/investors/SuperAdminInvestors";
 import AIInnovationHub from "./pages/super-admin/ai-hub/AIInnovationHub";
+import SuperAdminChatMonitoring from "./pages/super-admin/chat-monitoring/SuperAdminChatMonitoring";
 
 import SignIn from "./pages/auth/SignIn";
 
@@ -104,11 +106,7 @@ function App() {
           {/* Investors */}
           <Route
             path="investors"
-            element={
-              <ModulePlaceholder
-                title="Investors"
-              />
-            }
+            element={<SuperAdminInvestors />}
           />
 
           {/* AI Innovation Hub */}
@@ -120,11 +118,7 @@ function App() {
           {/* Chat Monitoring */}
           <Route
             path="chat-monitoring"
-            element={
-              <ModulePlaceholder
-                title="Chat Monitoring"
-              />
-            }
+            element={<SuperAdminChatMonitoring />}
           />
 
           {/* Deleted Orders */}

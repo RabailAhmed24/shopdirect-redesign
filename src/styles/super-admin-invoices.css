@@ -548,18 +548,24 @@
    ========================================================= */
 
 .invoice-drawer-overlay {
-  position: fixed;
-  inset: 0;
+  position: fixed !important;
+  inset: 0 !important;
 
-  z-index: 99999;
+  width: 100vw !important;
+  height: 100vh !important;
 
-  display: flex;
-  justify-content: flex-end;
+  z-index: 2147483000 !important;
+
+  display: flex !important;
+  justify-content: flex-end !important;
 
   background: rgba(27, 19, 34, 0.42);
 
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
+
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 /* =========================================================
@@ -1070,20 +1076,27 @@
    ========================================================= */
 
 .invoice-modal-overlay {
-  position: fixed;
-  inset: 0;
+  position: fixed !important;
+  inset: 0 !important;
 
-  z-index: 99999;
+  width: 100vw !important;
+  height: 100vh !important;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  z-index: 2147483000 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 
   padding: 24px;
 
   background: rgba(27, 19, 34, 0.5);
 
   backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .invoice-view-modal {
