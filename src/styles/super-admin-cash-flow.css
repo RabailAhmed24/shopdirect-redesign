@@ -1,0 +1,874 @@
+/* =========================================================
+   SUPER ADMIN CASH FLOW
+   ========================================================= */
+
+.super-admin-cash-flow {
+  width: 100%;
+  padding: 34px 38px 48px;
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+   ========================================================= */
+
+.cash-flow-page-header {
+  width: 100%;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+
+  margin: 0 0 28px;
+  padding: 0;
+}
+
+.cash-flow-heading-group {
+  min-width: 0;
+
+  margin: 0;
+  padding: 0;
+
+  text-align: left;
+}
+
+.cash-flow-eyebrow {
+  margin: 0 0 6px;
+  padding: 0;
+
+  color: #211b27;
+
+  font-size: 12px;
+  font-weight: 750;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+
+  text-align: left;
+}
+
+.cash-flow-page-header h1 {
+  margin: 0;
+  padding: 0;
+
+  color: #4c1d95;
+
+  font-size: 40px;
+  font-weight: 750;
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+
+  text-align: left;
+}
+
+.cash-flow-description {
+  max-width: 650px;
+
+  margin: 9px 0 0;
+  padding: 0;
+
+  color: #777181;
+
+  font-size: 14px;
+  line-height: 1.6;
+
+  text-align: left;
+}
+
+
+/* =========================================================
+   HEADER ACTIONS
+   ========================================================= */
+
+.cash-flow-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.cash-flow-header-search {
+  width: 230px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 0 13px;
+
+  background: #ffffff;
+
+  border: 1px solid #e3daee;
+  border-radius: 12px;
+
+  box-sizing: border-box;
+
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    background-color 160ms ease;
+}
+
+.cash-flow-header-search:focus-within {
+  background: #ffffff;
+  border-color: #8c5bc2;
+
+  box-shadow: 0 0 0 3px rgba(76, 29, 149, 0.06);
+}
+
+.cash-flow-header-search svg {
+  flex-shrink: 0;
+  color: #7c6595;
+}
+
+.cash-flow-header-search input {
+  min-width: 0;
+  width: 100%;
+
+  padding: 0;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+  color: #302a34;
+
+  font: inherit;
+  font-size: 12px;
+}
+
+.cash-flow-header-search input::placeholder {
+  color: #aaa2ae;
+}
+
+
+/* =========================================================
+   DOWNLOAD PDF
+   ========================================================= */
+
+.cash-flow-download-button {
+  min-height: 42px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  flex-shrink: 0;
+
+  padding: 0 18px;
+
+  border: 1px solid #e3daee;
+  border-radius: 12px;
+
+  background: #ffffff;
+  color: #4c1d95;
+
+  font: inherit;
+  font-size: 13px;
+  font-weight: 650;
+
+  cursor: pointer;
+
+  transition: 160ms ease;
+}
+
+.cash-flow-download-button:hover {
+  background: #f8f4fc;
+  border-color: #cfbee3;
+
+  box-shadow: 0 5px 16px rgba(76, 29, 149, 0.08);
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   FILTERS
+   ========================================================= */
+
+.cash-flow-filter-card {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr))
+    repeat(2, minmax(0, 1.1fr))
+    44px;
+
+  align-items: end;
+  gap: 12px;
+
+  margin: 0 0 20px;
+  padding: 18px;
+
+  background: #ffffff;
+
+  border: 1px solid #eee8f4;
+  border-radius: 18px;
+
+  box-shadow: 0 6px 22px rgba(44, 21, 74, 0.035);
+}
+
+.cash-flow-filter {
+  min-width: 0;
+  text-align: left;
+}
+
+.cash-flow-filter label {
+  display: block;
+
+  margin: 0 0 7px;
+  padding: 0;
+
+  color: #6f6875;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  text-align: left;
+}
+
+
+/* =========================================================
+   INPUTS
+   ========================================================= */
+
+.cash-flow-input-wrapper,
+.cash-flow-select-wrapper {
+  position: relative;
+
+  width: 100%;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 0 12px;
+
+  background: #faf9fc;
+
+  border: 1px solid #e5e1e8;
+  border-radius: 11px;
+
+  color: #8051ad;
+
+  box-sizing: border-box;
+}
+
+.cash-flow-input-wrapper:focus-within,
+.cash-flow-select-wrapper:focus-within {
+  background: #ffffff;
+  border-color: #8c5bc2;
+
+  box-shadow: 0 0 0 3px rgba(76, 29, 149, 0.06);
+}
+
+.cash-flow-input-wrapper svg {
+  flex-shrink: 0;
+}
+
+.cash-flow-input-wrapper input {
+  min-width: 0;
+  width: 100%;
+  height: 100%;
+
+  padding: 0;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+  color: #302a34;
+
+  font: inherit;
+  font-size: 12px;
+}
+
+.cash-flow-input-wrapper input::placeholder {
+  color: #aaa2ae;
+}
+
+
+/* =========================================================
+   SELECTS
+   ========================================================= */
+
+.cash-flow-select-wrapper {
+  padding: 0;
+}
+
+.cash-flow-select-wrapper select {
+  width: 100%;
+  height: 100%;
+
+  padding: 0 36px 0 12px;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.cash-flow-select-wrapper > svg {
+  position: absolute;
+
+  top: 50%;
+  right: 11px;
+
+  pointer-events: none;
+
+  transform: translateY(-50%);
+}
+
+.cash-flow-manager-select {
+  background: #f1f6fd;
+  border-color: #deebfa;
+}
+
+.cash-flow-manager-select select,
+.cash-flow-manager-select > svg {
+  color: #346db8;
+}
+
+.cash-flow-seller-select {
+  background: #edf8f1;
+  border-color: #dceee2;
+}
+
+.cash-flow-seller-select select,
+.cash-flow-seller-select > svg {
+  color: #298158;
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+.cash-flow-reset-button {
+  width: 44px;
+  height: 44px;
+
+  display: grid;
+  place-items: center;
+
+  padding: 0;
+
+  border: 1px solid #e4dbe9;
+  border-radius: 11px;
+
+  background: #ffffff;
+  color: #76519b;
+
+  cursor: pointer;
+
+  transition: 160ms ease;
+}
+
+.cash-flow-reset-button:hover {
+  background: #f7f2fb;
+  border-color: #cdb9df;
+
+  transform: rotate(-15deg);
+}
+
+
+/* =========================================================
+   SUMMARY
+   ========================================================= */
+
+.cash-flow-summary-grid {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+
+  margin-bottom: 20px;
+}
+
+.cash-flow-summary-card {
+  min-height: 100px;
+
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  padding: 18px 20px;
+
+  border: 1px solid;
+  border-radius: 16px;
+
+  box-sizing: border-box;
+
+  box-shadow: 0 5px 18px rgba(44, 21, 74, 0.03);
+}
+
+.cash-flow-summary-icon {
+  width: 46px;
+  height: 46px;
+
+  display: grid;
+  place-items: center;
+
+  flex-shrink: 0;
+
+  border-radius: 12px;
+}
+
+.cash-flow-summary-card span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.cash-flow-summary-card strong {
+  display: block;
+
+  color: #2b2530;
+
+  font-size: 21px;
+  font-weight: 760;
+}
+
+.cash-flow-sales-card {
+  background: #f5fbf7;
+  border-color: #dcefe3;
+}
+
+.cash-flow-sales-card .cash-flow-summary-icon {
+  background: #e3f4e9;
+  color: #278358;
+}
+
+.cash-flow-sales-card span {
+  color: #56806a;
+}
+
+.cash-flow-hold-card {
+  background: #faf7fd;
+  border-color: #e9ddf3;
+}
+
+.cash-flow-hold-card .cash-flow-summary-icon {
+  background: #eee3f8;
+  color: #7040a2;
+}
+
+.cash-flow-hold-card span {
+  color: #795d91;
+}
+
+
+/* =========================================================
+   TABLE CARD
+   ========================================================= */
+
+.cash-flow-table-card {
+  width: 100%;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #eee8f4;
+  border-radius: 18px;
+
+  box-shadow: 0 7px 24px rgba(44, 21, 74, 0.035);
+}
+
+.cash-flow-table-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  padding: 20px 22px;
+
+  border-bottom: 1px solid #f0ebf4;
+
+  text-align: left;
+}
+
+.cash-flow-table-header p {
+  margin: 0 0 4px;
+
+  color: #7e7485;
+
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cash-flow-table-header h2 {
+  margin: 0;
+
+  color: #29232f;
+
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.cash-flow-table-header > span {
+  padding: 6px 10px;
+
+  background: #f6f2fa;
+  color: #6f487f;
+
+  border-radius: 999px;
+
+  font-size: 11px;
+  font-weight: 650;
+}
+
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+.cash-flow-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.cash-flow-table {
+  width: 100%;
+  min-width: 760px;
+
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.cash-flow-table th,
+.cash-flow-table td {
+  padding: 14px 22px;
+
+  text-align: left;
+
+  border-bottom: 1px solid #f0ebf4;
+}
+
+.cash-flow-table th {
+  background: #faf9fc;
+  color: #7e7485;
+
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.cash-flow-table td {
+  color: #4b444f;
+
+  font-size: 12px;
+}
+
+.cash-flow-table th:nth-child(1),
+.cash-flow-table td:nth-child(1) {
+  width: 28%;
+}
+
+.cash-flow-table th:nth-child(2),
+.cash-flow-table td:nth-child(2) {
+  width: 25%;
+}
+
+.cash-flow-table th:nth-child(3),
+.cash-flow-table td:nth-child(3) {
+  width: 27%;
+}
+
+.cash-flow-table th:nth-child(4),
+.cash-flow-table td:nth-child(4) {
+  width: 20%;
+}
+
+.cash-flow-edit-button {
+  min-height: 34px;
+
+  padding: 0 12px;
+
+  border: 1px solid #ded2ea;
+  border-radius: 9px;
+
+  background: #f7f2fb;
+  color: #6935a1;
+
+  font: inherit;
+  font-size: 11px;
+  font-weight: 650;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.cash-flow-empty-state {
+  min-height: 210px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 36px 20px;
+
+  text-align: center;
+}
+
+.cash-flow-empty-icon {
+  width: 44px;
+  height: 44px;
+
+  display: grid;
+  place-items: center;
+
+  margin-bottom: 12px;
+
+  background: #f2ebf8;
+  color: #70449c;
+
+  border-radius: 12px;
+}
+
+.cash-flow-empty-state h3 {
+  margin: 0;
+
+  color: #312b35;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.cash-flow-empty-state p {
+  max-width: 360px;
+
+  margin: 6px 0 0;
+
+  color: #918895;
+
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   HELP PANEL
+   ========================================================= */
+
+.cash-flow-help {
+  width: 100%;
+
+  margin-top: 18px;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #eee8f4;
+  border-radius: 15px;
+}
+
+.cash-flow-help-trigger {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+
+  padding: 15px 17px;
+
+  border: 0;
+
+  background: transparent;
+
+  font: inherit;
+  text-align: left;
+
+  cursor: pointer;
+}
+
+.cash-flow-help-trigger > div {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.cash-flow-help-icon {
+  width: 34px;
+  height: 34px;
+
+  display: grid;
+  place-items: center;
+
+  flex-shrink: 0;
+
+  background: #f0e7f8;
+  color: #7040a2;
+
+  border-radius: 9px;
+}
+
+.cash-flow-help-trigger strong {
+  display: block;
+
+  color: #3b3440;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.cash-flow-help-trigger small {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #938a97;
+
+  font-size: 10px;
+}
+
+.cash-flow-help-trigger > svg {
+  color: #86798e;
+
+  transition: transform 160ms ease;
+}
+
+.cash-flow-help-trigger > svg.is-open {
+  transform: rotate(180deg);
+}
+
+.cash-flow-help-content {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+
+  padding: 18px;
+
+  background: #fcfbfd;
+
+  border-top: 1px solid #eee8f4;
+}
+
+.cash-flow-help-content strong {
+  color: #4c1d95;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.cash-flow-help-content p {
+  margin: 5px 0 0;
+
+  color: #817885;
+
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1150px) {
+  .cash-flow-filter-card {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+  .cash-flow-reset-button {
+    align-self: end;
+  }
+}
+
+@media (max-width: 850px) {
+  .cash-flow-filter-card {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .cash-flow-summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cash-flow-help-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .super-admin-cash-flow {
+    padding: 26px 20px 40px;
+  }
+
+  .cash-flow-page-header {
+    flex-direction: column;
+  }
+
+  .cash-flow-page-header h1 {
+    font-size: 34px;
+  }
+
+}
+
+@media (max-width: 560px) {
+  .cash-flow-filter-card {
+    grid-template-columns: 1fr;
+  }
+
+  .cash-flow-reset-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 980px) {
+  .cash-flow-page-header {
+    flex-direction: column;
+  }
+
+  .cash-flow-header-actions {
+    width: 100%;
+  }
+
+  .cash-flow-header-search {
+    flex: 1;
+    width: auto;
+  }
+}
+
+@media (max-width: 620px) {
+  .cash-flow-header-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cash-flow-header-search,
+  .cash-flow-download-button {
+    width: 100%;
+  }
+}

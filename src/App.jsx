@@ -12,6 +12,7 @@ import SuperAdminLayout from "./layouts/SuperAdminLayout";
 import SuperAdminDashboard from "./pages/super-admin/dashboard/SuperAdminDashboard";
 import SuperAdminReports from "./pages/super-admin/reports/SuperAdminReports";
 import SuperAdminIncomeStatement from "./pages/super-admin/income-statement/SuperAdminIncomeStatement";
+import SuperAdminCashFlow from "./pages/super-admin/cash-flow/SuperAdminCashFlow";
 import SuperAdminUsers from "./pages/super-admin/users/SuperAdminUsers";
 import AIInnovationHub from "./pages/super-admin/ai-hub/AIInnovationHub";
 
@@ -26,7 +27,7 @@ function App() {
       <Routes>
         {/* =====================================================
             ROOT
-            ===================================================== */}
+        ===================================================== */}
         <Route
           path="/"
           element={
@@ -39,7 +40,7 @@ function App() {
 
         {/* =====================================================
             AUTH
-            ===================================================== */}
+        ===================================================== */}
         <Route
           path="/login"
           element={<SignIn />}
@@ -47,7 +48,7 @@ function App() {
 
         {/* =====================================================
             SUPER ADMIN
-            ===================================================== */}
+        ===================================================== */}
         <Route
           path="/super-admin"
           element={
@@ -56,35 +57,31 @@ function App() {
             </ProtectedRoute>
           }
         >
-          {/* DASHBOARD */}
+          {/* Dashboard */}
           <Route
             index
             element={<SuperAdminDashboard />}
           />
 
-          {/* REPORTS */}
+          {/* Reports */}
           <Route
             path="reports"
             element={<SuperAdminReports />}
           />
 
-          {/* INCOME STATEMENT */}
+          {/* Income Statement */}
           <Route
             path="income-statement"
             element={<SuperAdminIncomeStatement />}
           />
 
-          {/* CASH FLOW STATEMENT */}
+          {/* Cash Flow Statement */}
           <Route
             path="cash-flow"
-            element={
-              <ModulePlaceholder
-                title="Cash Flow Statement"
-              />
-            }
+            element={<SuperAdminCashFlow />}
           />
 
-          {/* BANK ACCOUNTS */}
+          {/* Bank Accounts */}
           <Route
             path="bank-accounts"
             element={
@@ -94,7 +91,7 @@ function App() {
             }
           />
 
-          {/* INVOICES */}
+          {/* Invoice */}
           <Route
             path="invoices"
             element={
@@ -104,13 +101,13 @@ function App() {
             }
           />
 
-          {/* USER MANAGEMENT */}
+          {/* User Management */}
           <Route
             path="users"
             element={<SuperAdminUsers />}
           />
 
-          {/* INVESTORS */}
+          {/* Investors */}
           <Route
             path="investors"
             element={
@@ -120,13 +117,13 @@ function App() {
             }
           />
 
-          {/* AI INNOVATION HUB */}
+          {/* AI Innovation Hub */}
           <Route
             path="ai-hub"
             element={<AIInnovationHub />}
           />
 
-          {/* CHAT MONITORING */}
+          {/* Chat Monitoring */}
           <Route
             path="chat-monitoring"
             element={
@@ -136,7 +133,7 @@ function App() {
             }
           />
 
-          {/* DELETED ORDERS */}
+          {/* Deleted Orders */}
           <Route
             path="deleted-orders"
             element={
@@ -146,7 +143,7 @@ function App() {
             }
           />
 
-          {/* SUPER ADMIN 404 */}
+          {/* Super Admin 404 */}
           <Route
             path="*"
             element={<SuperAdminNotFound />}
@@ -155,7 +152,7 @@ function App() {
 
         {/* =====================================================
             GLOBAL FALLBACK
-            ===================================================== */}
+        ===================================================== */}
         <Route
           path="*"
           element={
