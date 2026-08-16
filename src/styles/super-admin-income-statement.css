@@ -876,3 +876,59 @@
 .income-download-button {
   flex-shrink: 0;
 }
+
+/* =========================================================
+   FINAL LEFT ALIGNMENT FIX
+   ========================================================= */
+
+/* Page heading */
+.income-heading-group {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.income-eyebrow,
+.income-page-header h1,
+.income-description {
+  margin-left: 0;
+  padding-left: 0;
+  text-align: left;
+}
+
+/* Start Date / End Date / Admin labels */
+.income-filter label {
+  margin: 0 0 7px;
+  padding-left: 0;
+  text-align: left;
+}
+
+/* Keep all filter fields aligned */
+.income-filter {
+  text-align: left;
+}
+
+/* =========================================================
+   FINAL FORM LABEL ALIGNMENT
+   ========================================================= */
+
+/* Start Date / End Date / Admin */
+.income-filter label {
+  margin: 0 0 7px;
+  padding-left: 0;
+  text-align: left;
+}
+
+/* Rent / Wages / Other Expenses */
+.income-fixed-field > span {
+  display: block;
+  margin: 0 0 7px;
+  padding-left: 0;
+  text-align: left;
+}
+
+/* Keep filter and fixed-expense fields consistently aligned */
+.income-filter,
+.income-fixed-field {
+  text-align: left;
+}
