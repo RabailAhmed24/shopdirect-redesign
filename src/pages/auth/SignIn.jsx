@@ -21,11 +21,20 @@ function SignIn() {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
+  // Email validation:
+  // Valid email format: example@company.com
   const isEmailValid =
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
+  // Password validation:
+  // Minimum 8 characters
+  // At least 1 uppercase letter
+  // At least 1 number
+  // At least 1 special character
   const isPasswordValid =
-    password.trim().length >= 6;
+    /^(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$/.test(
+      password
+    );
 
   const isFormValid =
     isEmailValid && isPasswordValid;
