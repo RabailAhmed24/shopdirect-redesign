@@ -13,6 +13,7 @@ import SuperAdminDashboard from "./pages/super-admin/dashboard/SuperAdminDashboa
 import SuperAdminReports from "./pages/super-admin/reports/SuperAdminReports";
 import SuperAdminIncomeStatement from "./pages/super-admin/income-statement/SuperAdminIncomeStatement";
 import SuperAdminCashFlow from "./pages/super-admin/cash-flow/SuperAdminCashFlow";
+import SuperAdminBankAccounts from "./pages/super-admin/bank-accounts/SuperAdminBankAccounts";
 import SuperAdminUsers from "./pages/super-admin/users/SuperAdminUsers";
 import AIInnovationHub from "./pages/super-admin/ai-hub/AIInnovationHub";
 
@@ -84,11 +85,7 @@ function App() {
           {/* Bank Accounts */}
           <Route
             path="bank-accounts"
-            element={
-              <ModulePlaceholder
-                title="Bank Accounts"
-              />
-            }
+            element={<SuperAdminBankAccounts />}
           />
 
           {/* Invoice */}

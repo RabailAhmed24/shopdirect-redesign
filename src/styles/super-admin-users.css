@@ -156,10 +156,10 @@
 
   padding: 0 16px;
 
-  border: 1px solid #d97706;
+  border: 1px solid #b92328;
   border-radius: 12px;
 
-  background: #d97706;
+  background: #b92328;
   color: #ffffff;
 
   font: inherit;
@@ -168,7 +168,7 @@
 
   cursor: pointer;
 
-  box-shadow: 0 6px 16px rgba(217, 119, 6, 0.15);
+  box-shadow: 0 6px 16px rgba(185, 35, 40, 0.15);
 
   transition:
     background-color 160ms ease,
@@ -178,10 +178,10 @@
 }
 
 .users-remove-button:hover:not(:disabled) {
-  background: #b45309;
-  border-color: #b45309;
+  background: #9f1f24;
+  border-color: #9f1f24;
 
-  box-shadow: 0 8px 20px rgba(180, 83, 9, 0.2);
+  box-shadow: 0 8px 20px rgba(159, 31, 36, 0.2);
 
   transform: translateY(-1px);
 }
@@ -191,10 +191,10 @@
 }
 
 .users-remove-button:disabled {
-  background: #f3e7d5;
-  color: #bda789;
+  background: #f5dfdf;
+  color: #ba9698;
 
-  border-color: #ead8bf;
+  border-color: #ebc9ca;
 
   cursor: not-allowed;
 
@@ -1459,7 +1459,7 @@
 
   box-shadow:
     0 28px 72px rgba(28, 15, 43, 0.28),
-    0 8px 24px rgba(217, 119, 6, 0.1);
+    0 8px 24px rgba(185, 35, 40, 0.1);
 
   animation: users-modal-pop 180ms ease;
 }
@@ -1481,9 +1481,9 @@
   background:
     linear-gradient(
       135deg,
-      #9a4f08 0%,
-      #d97706 58%,
-      #ea8f22 100%
+      #941f24 0%,
+      #b92328 58%,
+      #cf3035 100%
     );
 
   color: #ffffff;
@@ -1665,15 +1665,15 @@
 }
 
 .users-remove-user-option:hover {
-  background: #fffaf2;
-  border-color: #ead1ad;
+  background: #fff7f7;
+  border-color: #efcaca;
 }
 
 .users-remove-user-option.selected {
-  background: #fff7ea;
-  border-color: #d97706;
+  background: #fff1f1;
+  border-color: #b92328;
 
-  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.08);
+  box-shadow: 0 0 0 3px rgba(185, 35, 40, 0.08);
 }
 
 .users-remove-user-copy {
@@ -1726,16 +1726,16 @@
   margin-top: 14px;
   padding: 11px 12px;
 
-  background: #fffaf2;
+  background: #fff7f7;
 
-  border: 1px solid #f0dcc0;
+  border: 1px solid #f0caca;
   border-radius: 10px;
 }
 
 .users-remove-selection > span {
   display: block;
 
-  color: #9a6a2f;
+  color: #a24b4f;
 
   font-size: 9px;
   font-weight: 700;
@@ -1747,7 +1747,7 @@
 
   margin-top: 4px;
 
-  color: #4a3217;
+  color: #55272a;
 
   font-size: 12px;
 }
@@ -1757,7 +1757,7 @@
 
   margin-top: 2px;
 
-  color: #9a7952;
+  color: #9f6669;
 
   font-size: 9.5px;
 }
@@ -1766,10 +1766,10 @@
   margin: 12px 0 0;
   padding: 9px 10px;
 
-  background: #fff4e8;
-  color: #a85b06;
+  background: #fff1f1;
+  color: #a92323;
 
-  border: 1px solid #f1d1a7;
+  border: 1px solid #f0caca;
   border-radius: 9px;
 
   font-size: 10px;
@@ -1806,10 +1806,10 @@
 
   padding: 0 15px;
 
-  border: 1px solid #d97706;
+  border: 1px solid #b92328;
   border-radius: 9px;
 
-  background: #d97706;
+  background: #b92328;
   color: #ffffff;
 
   font: inherit;
@@ -1818,19 +1818,19 @@
 
   cursor: pointer;
 
-  box-shadow: 0 5px 14px rgba(217, 119, 6, 0.16);
+  box-shadow: 0 5px 14px rgba(185, 35, 40, 0.16);
 }
 
 .users-remove-confirm-button:hover:not(:disabled) {
-  background: #b45309;
-  border-color: #b45309;
+  background: #9f1f24;
+  border-color: #9f1f24;
 }
 
 .users-remove-confirm-button:disabled {
-  background: #f2e7d8;
-  color: #bca88d;
+  background: #f4dfdf;
+  color: #b99597;
 
-  border-color: #e9d8c0;
+  border-color: #ebc9ca;
 
   cursor: not-allowed;
 
