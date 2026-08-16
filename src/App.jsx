@@ -19,10 +19,10 @@ import SuperAdminUsers from "./pages/super-admin/users/SuperAdminUsers";
 import SuperAdminInvestors from "./pages/super-admin/investors/SuperAdminInvestors";
 import AIInnovationHub from "./pages/super-admin/ai-hub/AIInnovationHub";
 import SuperAdminChatMonitoring from "./pages/super-admin/chat-monitoring/SuperAdminChatMonitoring";
+import SuperAdminDeletedOrders from "./pages/super-admin/deleted-orders/SuperAdminDeletedOrders";
 
 import SignIn from "./pages/auth/SignIn";
 
-import ModulePlaceholder from "./components/common/ModulePlaceholder";
 import SuperAdminNotFound from "./pages/super-admin/SuperAdminNotFound";
 
 function App() {
@@ -124,11 +124,7 @@ function App() {
           {/* Deleted Orders */}
           <Route
             path="deleted-orders"
-            element={
-              <ModulePlaceholder
-                title="Deleted Orders"
-              />
-            }
+            element={<SuperAdminDeletedOrders />}
           />
 
           {/* Super Admin 404 */}
