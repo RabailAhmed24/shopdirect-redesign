@@ -462,6 +462,8 @@ function SuperAdminDashboard() {
         </div>
 
         <select
+          id="dashboard-period-filter"
+          name="dashboardPeriodFilter"
           className="dashboard-period"
           value={selectedPeriod}
           onChange={(event) => setSelectedPeriod(event.target.value)}

@@ -926,7 +926,10 @@ function SuperAdminInvestors() {
               <Search size={16} />
 
               <input
+                id="investor-search"
+                name="investorSearch"
                 type="search"
+                autoComplete="off"
                 placeholder="Search investors..."
                 value={investorSearch}
                 onChange={(event) =>
@@ -1121,7 +1124,10 @@ function SuperAdminInvestors() {
               <Search size={16} />
 
               <input
+                id="timeline-search"
+                name="timelineSearch"
                 type="search"
+                autoComplete="off"
                 placeholder="Search timelines..."
                 value={timelineSearch}
                 onChange={(event) =>
@@ -1278,7 +1284,10 @@ function SuperAdminInvestors() {
               <Search size={16} />
 
               <input
+                id="ledger-search"
+                name="ledgerSearch"
                 type="search"
+                autoComplete="off"
                 placeholder="Search ledger entries..."
                 value={ledgerSearch}
                 onChange={(event) =>
@@ -1437,8 +1446,10 @@ function SuperAdminInvestors() {
                     <div className="investor-form-grid">
                       <InvestorField label="Full Name">
                         <input
+                          id="investor-full-name"
                           type="text"
                           name="fullName"
+                          autoComplete="name"
                           value={
                             investorForm.fullName
                           }
@@ -1451,8 +1462,10 @@ function SuperAdminInvestors() {
 
                       <InvestorField label="Phone Number">
                         <input
+                          id="investor-phone"
                           type="text"
                           name="phone"
+                          autoComplete="tel"
                           value={
                             investorForm.phone
                           }
@@ -1465,8 +1478,10 @@ function SuperAdminInvestors() {
 
                       <InvestorField label="Email">
                         <input
+                          id="investor-email"
                           type="email"
                           name="email"
+                          autoComplete="email"
                           value={
                             investorForm.email
                           }
@@ -1479,8 +1494,10 @@ function SuperAdminInvestors() {
 
                       <InvestorField label="Password">
                         <input
+                          id="investor-password"
                           type="password"
                           name="password"
+                          autoComplete="new-password"
                           value={
                             investorForm.password
                           }
@@ -1501,10 +1518,12 @@ function SuperAdminInvestors() {
                     <div className="investor-form-grid">
                       <InvestorField label="Initial Capital">
                         <input
+                          id="investor-capital"
                           type="number"
                           min="0"
                           step="0.01"
                           name="capital"
+                          autoComplete="off"
                           value={
                             investorForm.capital
                           }
@@ -1518,6 +1537,7 @@ function SuperAdminInvestors() {
                       <InvestorField label="Bank Account">
                         <SelectWrapper>
                           <select
+                            id="investor-bank-account"
                             name="bankAccount"
                             value={
                               investorForm.bankAccount
@@ -1559,7 +1579,9 @@ function SuperAdminInvestors() {
 
                     <InvestorField label="Notes">
                       <textarea
+                        id="investor-notes"
                         name="notes"
+                        autoComplete="off"
                         value={
                           investorForm.notes
                         }
@@ -1631,6 +1653,7 @@ function SuperAdminInvestors() {
                       <InvestorField label="Investor">
                         <SelectWrapper>
                           <select
+                            id="timeline-investor"
                             name="investorId"
                             value={
                               timelineForm.investorId
@@ -1667,8 +1690,10 @@ function SuperAdminInvestors() {
 
                       <InvestorField label="Timeline Title">
                         <input
+                          id="timeline-title"
                           type="text"
                           name="title"
+                          autoComplete="off"
                           value={
                             timelineForm.title
                           }
@@ -1681,9 +1706,11 @@ function SuperAdminInvestors() {
 
                       <InvestorField label="Total Estimated Days">
                         <input
+                          id="timeline-total-days"
                           type="number"
                           min="0"
                           name="totalDays"
+                          autoComplete="off"
                           value={
                             timelineForm.totalDays
                           }
@@ -1696,8 +1723,10 @@ function SuperAdminInvestors() {
 
                       <InvestorField label="Product Description">
                         <input
+                          id="timeline-product-description"
                           type="text"
                           name="productDescription"
+                          autoComplete="off"
                           value={
                             timelineForm.productDescription
                           }
@@ -1748,7 +1777,10 @@ function SuperAdminInvestors() {
                             </span>
 
                             <input
+                              id={`timeline-stage-name-${stage.id}`}
+                              name={`timelineStageName-${stage.id}`}
                               type="text"
+                              autoComplete="off"
                               value={
                                 stage.name
                               }
@@ -1767,7 +1799,10 @@ function SuperAdminInvestors() {
                             />
 
                             <input
+                              id={`timeline-stage-days-${stage.id}`}
+                              name={`timelineStageDays-${stage.id}`}
                               type="number"
+                              autoComplete="off"
                               value={
                                 stage.estimatedDays
                               }
@@ -1787,6 +1822,8 @@ function SuperAdminInvestors() {
 
                             <SelectWrapper>
                               <select
+                                id={`timeline-stage-status-${stage.id}`}
+                                name={`timelineStageStatus-${stage.id}`}
                                 value={
                                   stage.status
                                 }
@@ -1817,7 +1854,10 @@ function SuperAdminInvestors() {
                             </SelectWrapper>
 
                             <input
+                              id={`timeline-stage-note-${stage.id}`}
+                              name={`timelineStageNote-${stage.id}`}
                               type="text"
+                              autoComplete="off"
                               value={
                                 stage.note
                               }
@@ -1913,6 +1953,7 @@ function SuperAdminInvestors() {
                       <InvestorField label="Investor">
                         <SelectWrapper>
                           <select
+                            id="ledger-investor"
                             name="investorId"
                             value={
                               ledgerForm.investorId
@@ -1950,6 +1991,7 @@ function SuperAdminInvestors() {
                       <InvestorField label="Transaction Type">
                         <SelectWrapper>
                           <select
+                            id="ledger-type"
                             name="type"
                             value={
                               ledgerForm.type
@@ -1983,8 +2025,10 @@ function SuperAdminInvestors() {
 
                       <InvestorField label="Transaction Date">
                         <input
+                          id="ledger-date"
                           type="date"
                           name="date"
+                          autoComplete="off"
                           value={
                             ledgerForm.date
                           }
@@ -1996,10 +2040,12 @@ function SuperAdminInvestors() {
 
                       <InvestorField label="Amount">
                         <input
+                          id="ledger-amount"
                           type="number"
                           min="0"
                           step="0.01"
                           name="amount"
+                          autoComplete="off"
                           value={
                             ledgerForm.amount
                           }
@@ -2021,6 +2067,7 @@ function SuperAdminInvestors() {
                       <InvestorField label="Bank Account">
                         <SelectWrapper>
                           <select
+                            id="ledger-bank-account"
                             name="bankAccount"
                             value={
                               ledgerForm.bankAccount
@@ -2057,8 +2104,10 @@ function SuperAdminInvestors() {
 
                       <InvestorField label="Reference ID">
                         <input
+                          id="ledger-reference-id"
                           type="text"
                           name="referenceId"
+                          autoComplete="off"
                           value={
                             ledgerForm.referenceId
                           }
@@ -2078,7 +2127,9 @@ function SuperAdminInvestors() {
 
                     <InvestorField label="Notes">
                       <textarea
+                        id="ledger-notes"
                         name="notes"
+                        autoComplete="off"
                         value={
                           ledgerForm.notes
                         }

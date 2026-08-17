@@ -173,7 +173,10 @@ function SuperAdminChatMonitoring() {
             <Search size={17} />
 
             <input
-              type="text"
+              id="chat-user-search"
+              name="chatUserSearch"
+              type="search"
+              autoComplete="off"
               placeholder="Search users..."
               value={searchTerm}
               onChange={(event) => setSearchTerm(event.target.value)}

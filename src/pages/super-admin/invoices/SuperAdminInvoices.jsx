@@ -690,7 +690,10 @@ function SuperAdminInvoices() {
           <Search size={16} />
 
           <input
+            id="invoice-search"
+            name="invoiceSearch"
             type="search"
+            autoComplete="off"
             placeholder="Search invoices..."
             value={search}
             onChange={(event) =>
