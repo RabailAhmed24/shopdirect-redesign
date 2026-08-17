@@ -1644,3 +1644,186 @@
   margin-left: 0;
   text-align: left;
 }
+
+/* =========================================================
+   DASHBOARD — MOBILE RESPONSIVE FIX
+========================================================= */
+
+@media (max-width: 768px) {
+  .dashboard-page {
+    width: 100%;
+    max-width: none;
+
+    margin: 0;
+    padding: 0;
+  }
+
+  /* HEADER */
+
+  .dashboard-header {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 14px;
+
+    margin-bottom: 20px;
+    padding-top: 0;
+  }
+
+  .dashboard-header-text {
+    width: 100%;
+  }
+
+  .dashboard-title {
+    font-size: 26px;
+    line-height: 1.2;
+
+    letter-spacing: -0.025em;
+  }
+
+  .dashboard-updated {
+    margin-top: 5px;
+  }
+
+  .dashboard-header .dashboard-period {
+    width: 100%;
+    min-width: 0;
+
+    height: 44px;
+  }
+
+  /* KPI CARDS */
+
+  .dashboard-stats-grid {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+
+  .dashboard-stat-card {
+    min-height: 180px;
+    padding: 18px;
+  }
+
+  .dashboard-stat-card h2 {
+    font-size: 26px;
+    line-height: 32px;
+  }
+
+  /* MAIN SECTIONS */
+
+  .dashboard-main-grid,
+  .dashboard-bottom-grid {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+
+  .dashboard-card {
+    width: 100%;
+    min-width: 0;
+
+    padding: 18px;
+
+    border-radius: 14px;
+  }
+
+  /* CARD HEADERS */
+
+  .dashboard-card-header {
+    gap: 12px;
+  }
+
+  .dashboard-card-header h3 {
+    font-size: 15px;
+  }
+
+  /* CHART */
+
+  .dashboard-sales-card {
+    min-height: auto;
+  }
+
+  .dashboard-sales-chart {
+    width: 100%;
+    height: 230px;
+
+    margin-top: 18px;
+  }
+
+  .dashboard-chart-legend {
+    justify-content: flex-start;
+
+    gap: 8px;
+
+    overflow-x: auto;
+
+    padding-bottom: 4px;
+  }
+
+  .dashboard-metric-switcher {
+    flex-wrap: nowrap;
+  }
+
+  .dashboard-metric-switcher button {
+    flex-shrink: 0;
+  }
+
+  /* FINANCE */
+
+  .dashboard-finance-stats {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+  }
+
+  /* NETWORK */
+
+  .dashboard-network-row {
+    grid-template-columns: 34px minmax(0, 1fr) auto;
+
+    gap: 9px;
+  }
+
+  /* NEEDS ATTENTION */
+
+  .dashboard-attention-row {
+    grid-template-columns: 34px minmax(0, 1fr) auto;
+
+    gap: 9px;
+
+    padding: 10px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+  .dashboard-title {
+    font-size: 24px;
+  }
+
+  .dashboard-stat-card {
+    min-height: 170px;
+  }
+
+  .dashboard-card {
+    padding: 16px;
+  }
+
+  .dashboard-sales-chart {
+    height: 210px;
+  }
+
+  .dashboard-finance-card .dashboard-card-header h3,
+  .dashboard-attention-card .dashboard-card-header h3 {
+    font-size: 17px;
+  }
+}

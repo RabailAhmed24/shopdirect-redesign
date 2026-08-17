@@ -867,3 +867,83 @@ body,
     gap: 24px;
   }
 }
+
+/* =========================================================
+   SIGN IN — MOBILE REFINEMENT
+========================================================= */
+
+@media (max-width: 768px) {
+  .signin-page,
+  .signin-shell {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    overflow-x: hidden;
+  }
+
+  .signin-visual {
+    display: none;
+  }
+
+  .signin-form-section {
+    width: 100%;
+    min-height: 100vh;
+
+    padding: 30px 24px;
+  }
+
+  .signin-form-container {
+    width: 100%;
+    max-width: 420px;
+
+    margin: 0 auto;
+  }
+
+  .signin-heading {
+    font-size: 30px;
+    line-height: 1.15;
+
+    text-align: center;
+  }
+
+  .signin-subtitle {
+    font-size: 13.5px;
+    line-height: 1.6;
+
+    text-align: center;
+  }
+
+  .signin-progress {
+    width: 100%;
+    margin: 34px 0;
+  }
+
+  .signin-field {
+    width: 100%;
+  }
+
+  .signin-input-wrapper,
+  .signin-input {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .signin-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .signin-form-section {
+    padding: 26px 18px;
+  }
+
+  .signin-heading {
+    font-size: 28px;
+  }
+
+  .signin-progress {
+    margin: 30px 0;
+  }
+}

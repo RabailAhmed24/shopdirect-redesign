@@ -2192,3 +2192,58 @@
   color: #ffffff;
   stroke: currentColor;
 }
+
+/* =========================================
+   MOBILE — USER ACTION BUTTONS
+========================================= */
+
+@media (max-width: 768px) {
+  .users-header-actions {
+    width: 100% !important;
+
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+
+    column-gap: 14px !important;
+
+    margin: 24px 0 0 !important;
+    padding: 0 !important;
+
+    position: static !important;
+    transform: none !important;
+  }
+
+  .users-header-actions .remove-user-button,
+  .users-header-actions .add-user-button {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+
+    height: 52px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    gap: 7px !important;
+
+    margin: 0 !important;
+    padding: 0 10px !important;
+
+    position: relative !important;
+    inset: auto !important;
+
+    transform: none !important;
+
+    white-space: nowrap;
+    font-size: 13px;
+  }
+
+  .users-header-actions .remove-user-button {
+    justify-self: stretch !important;
+  }
+
+  .users-header-actions .add-user-button {
+    justify-self: stretch !important;
+  }
+}

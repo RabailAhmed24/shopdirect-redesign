@@ -872,3 +872,162 @@
     width: 100%;
   }
 }
+
+/* =========================================================
+   CASH FLOW — MOBILE REFINEMENT
+========================================================= */
+
+@media (max-width: 768px) {
+  .super-admin-cash-flow {
+    width: 100%;
+    padding: 0;
+  }
+
+  /* HEADER */
+
+  .cash-flow-page-header {
+    width: 100%;
+
+    flex-direction: column;
+
+    gap: 18px;
+    margin-bottom: 22px;
+  }
+
+  .cash-flow-page-header h1 {
+    font-size: 32px;
+    line-height: 1.1;
+  }
+
+  .cash-flow-description {
+    font-size: 13.5px;
+    line-height: 1.6;
+  }
+
+  .cash-flow-header-actions {
+    width: 100%;
+
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 10px;
+  }
+
+  .cash-flow-header-search,
+  .cash-flow-download-button {
+    width: 100%;
+  }
+
+  /* FILTERS */
+
+  .cash-flow-filter-card {
+    width: 100%;
+
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+
+    padding: 20px;
+  }
+
+  .cash-flow-reset-button {
+    width: 100%;
+  }
+
+  /* SUMMARY CARDS */
+
+  .cash-flow-summary-grid {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+  }
+
+  .cash-flow-summary-card {
+    width: 100%;
+
+    min-height: 96px;
+
+    padding: 17px 18px;
+  }
+
+  /* TABLE */
+
+  .cash-flow-table-card {
+    width: 100%;
+  }
+
+  .cash-flow-table-header {
+    padding: 18px;
+
+    gap: 12px;
+  }
+
+  .cash-flow-table-header h2 {
+    font-size: 18px;
+  }
+
+  .cash-flow-table-scroll {
+    width: 100%;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .cash-flow-table {
+    min-width: 720px;
+  }
+
+  .cash-flow-table th,
+  .cash-flow-table td {
+    padding: 13px 18px;
+  }
+
+  /* EMPTY STATE */
+
+  .cash-flow-empty-state {
+    min-width: 720px;
+    min-height: 210px;
+  }
+
+  /* HELP */
+
+  .cash-flow-help {
+    width: 100%;
+  }
+
+  .cash-flow-help-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+  .cash-flow-page-header h1 {
+    font-size: 30px;
+  }
+
+  .cash-flow-filter-card {
+    padding: 18px;
+  }
+
+  .cash-flow-summary-card {
+    padding: 16px;
+  }
+
+  .cash-flow-summary-card strong {
+    font-size: 20px;
+  }
+
+  .cash-flow-table-header {
+    padding: 16px;
+  }
+
+  .cash-flow-help-trigger {
+    padding: 14px;
+  }
+}

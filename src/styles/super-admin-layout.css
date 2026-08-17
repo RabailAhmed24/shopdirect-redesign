@@ -59,7 +59,6 @@ body {
 
 .super-admin-layout.sidebar-collapsed .super-admin-main {
   width: calc(100% - 76px);
-
   margin-left: 76px;
 }
 
@@ -87,6 +86,50 @@ body {
   z-index: 20;
 }
 
+.topbar-left {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ========================================
+   MOBILE MENU BUTTON
+======================================== */
+
+.mobile-menu-button {
+  width: 42px;
+  height: 42px;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  padding: 0;
+
+  border: 1px solid #ebe7f3;
+  border-radius: 12px;
+
+  background: #ffffff;
+  color: #4c1d95;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.mobile-menu-button:hover {
+  background: #f7f5fb;
+  border-color: #ddd5f4;
+  color: #3f177f;
+}
+
 /* ========================================
    PAGE CONTENT
 ======================================== */
@@ -110,6 +153,17 @@ body {
 /* ========================================
    SEARCH
 ======================================== */
+
+.workspace-search {
+  position: relative;
+
+  width: 340px;
+  min-width: 0;
+}
+
+.workspace-search .topbar-search {
+  width: 100%;
+}
 
 .topbar-search {
   width: 340px;
@@ -143,6 +197,7 @@ body {
 
 .topbar-search input {
   width: 100%;
+  min-width: 0;
 
   border: none;
   outline: none;
@@ -167,6 +222,8 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
+
+  flex-shrink: 0;
 }
 
 .notification-button {
@@ -378,16 +435,6 @@ body {
    WORKSPACE SEARCH DROPDOWN
 ======================================== */
 
-.workspace-search {
-  position: relative;
-
-  width: 340px;
-}
-
-.workspace-search .topbar-search {
-  width: 100%;
-}
-
 .workspace-search-dropdown {
   position: absolute;
 
@@ -469,7 +516,15 @@ body {
 }
 
 /* ========================================
-   RESPONSIVE SAFETY
+   MOBILE SIDEBAR BACKDROP
+======================================== */
+
+.sidebar-mobile-backdrop {
+  display: none;
+}
+
+/* ========================================
+   TABLET
 ======================================== */
 
 @media (max-width: 900px) {
@@ -479,5 +534,218 @@ body {
 
   .topbar-search {
     width: 280px;
+  }
+
+  .super-admin-content {
+    padding: 26px;
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+  body {
+    background: #f7f8fc;
+  }
+
+  .super-admin-layout {
+    background: #f7f8fc;
+  }
+
+  .super-admin-main,
+  .super-admin-layout.sidebar-collapsed .super-admin-main {
+    width: 100%;
+    min-width: 0;
+
+    margin-left: 0;
+
+    padding: 0;
+
+    background: #f7f8fc;
+  }
+
+  .super-admin-topbar {
+    position: sticky;
+    top: 0;
+
+    height: 68px;
+
+    gap: 12px;
+
+    padding: 0 16px;
+
+    border-radius: 0;
+    border-bottom: 1px solid #eeeaf4;
+
+    box-shadow: 0 3px 12px rgba(31, 20, 55, 0.04);
+
+    z-index: 100;
+  }
+
+  .topbar-left {
+    min-width: 0;
+    flex: 1;
+  }
+
+  .mobile-menu-button {
+    display: flex;
+  }
+
+  .workspace-search {
+    width: auto;
+    min-width: 0;
+    flex: 1;
+  }
+
+  .topbar-search {
+    width: 100%;
+    height: 42px;
+
+    padding: 0 14px;
+  }
+
+  .topbar-search input {
+    font-size: 13px;
+  }
+
+  .workspace-search-dropdown {
+    width: min(100%, 360px);
+  }
+
+  .topbar-actions {
+    gap: 8px;
+  }
+
+  .notification-button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .topbar-profile {
+    width: 40px;
+    height: 40px;
+    min-height: 40px;
+
+    padding: 3px;
+
+    justify-content: center;
+  }
+
+  .profile-avatar {
+    width: 34px;
+    height: 34px;
+  }
+
+  .profile-info,
+  .profile-chevron {
+    display: none;
+  }
+
+  .profile-dropdown {
+    top: calc(100% + 10px);
+    right: 0;
+  }
+
+  .super-admin-content {
+    min-height: calc(100vh - 68px);
+
+    padding: 22px 18px;
+  }
+
+  .sidebar-mobile-backdrop {
+    position: fixed;
+    inset: 0;
+
+    display: block;
+
+    padding: 0;
+
+    border: none;
+
+    background: rgba(24, 14, 42, 0.42);
+
+    cursor: pointer;
+
+    z-index: 140;
+  }
+}
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 560px) {
+  .super-admin-topbar {
+    padding: 0 12px;
+    gap: 8px;
+  }
+
+  .topbar-left {
+    gap: 8px;
+  }
+
+  .mobile-menu-button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .workspace-search {
+    flex: 1;
+  }
+
+  .topbar-search {
+    height: 40px;
+    padding: 0 12px;
+  }
+
+  .topbar-search input::placeholder {
+    font-size: 12px;
+  }
+
+  .notification-button {
+    display: none;
+  }
+
+  .super-admin-content {
+    padding: 18px 14px;
+  }
+}
+
+/* ========================================
+   EXTRA SMALL MOBILE
+======================================== */
+
+@media (max-width: 420px) {
+  .topbar-search {
+    padding: 0 10px;
+    gap: 7px;
+  }
+
+  .topbar-search svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .topbar-search input {
+    font-size: 12px;
+  }
+
+  .topbar-profile {
+    width: 38px;
+    height: 38px;
+    min-height: 38px;
+  }
+
+  .profile-avatar {
+    width: 32px;
+    height: 32px;
+
+    font-size: 10px;
+  }
+
+  .super-admin-content {
+    padding: 16px 12px;
   }
 }

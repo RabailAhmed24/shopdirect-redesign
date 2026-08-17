@@ -5,12 +5,13 @@ import {
   Bell,
   ChevronDown,
   LogOut,
+  Menu,
   Search,
 } from "lucide-react";
 
 import { superAdminModules } from "../../data/superAdminModules";
 
-function SuperAdminTopbar() {
+function SuperAdminTopbar({ onMenuClick, isMobile }) {
   const navigate = useNavigate();
 
   const searchAreaRef = useRef(null);
@@ -21,8 +22,7 @@ function SuperAdminTopbar() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
 
-  const normalizedQuery =
-    query.trim().toLowerCase();
+  const normalizedQuery = query.trim().toLowerCase();
 
   const searchResults = useMemo(() => {
     if (!normalizedQuery) {
@@ -37,9 +37,7 @@ function SuperAdminTopbar() {
         .join(" ")
         .toLowerCase();
 
-      return searchableText.includes(
-        normalizedQuery
-      );
+      return searchableText.includes(normalizedQuery);
     });
   }, [normalizedQuery]);
 
@@ -67,26 +65,12 @@ function SuperAdminTopbar() {
       }
     }
 
-    document.addEventListener(
-      "mousedown",
-      handleOutsideClick
-    );
-
-    document.addEventListener(
-      "keydown",
-      handleEscape
-    );
+    document.addEventListener("mousedown", handleOutsideClick);
+    document.addEventListener("keydown", handleEscape);
 
     return () => {
-      document.removeEventListener(
-        "mousedown",
-        handleOutsideClick
-      );
-
-      document.removeEventListener(
-        "keydown",
-        handleEscape
-      );
+      document.removeEventListener("mousedown", handleOutsideClick);
+      document.removeEventListener("keydown", handleEscape);
     };
   }, []);
 
@@ -103,10 +87,7 @@ function SuperAdminTopbar() {
 
     setQuery(value);
     setSelectedIndex(0);
-
-    setIsSearchOpen(
-      value.trim().length > 0
-    );
+    setIsSearchOpen(value.trim().length > 0);
   }
 
   function handleSearchKeyDown(event) {
@@ -115,10 +96,7 @@ function SuperAdminTopbar() {
       return;
     }
 
-    if (
-      !isSearchOpen ||
-      searchResults.length === 0
-    ) {
+    if (!isSearchOpen || searchResults.length === 0) {
       return;
     }
 
@@ -126,8 +104,7 @@ function SuperAdminTopbar() {
       event.preventDefault();
 
       setSelectedIndex((currentIndex) =>
-        currentIndex >=
-        searchResults.length - 1
+        currentIndex >= searchResults.length - 1
           ? 0
           : currentIndex + 1
       );
@@ -150,8 +127,7 @@ function SuperAdminTopbar() {
     if (event.key === "Enter") {
       event.preventDefault();
 
-      const selectedModule =
-        searchResults[selectedIndex];
+      const selectedModule = searchResults[selectedIndex];
 
       if (selectedModule) {
         openModule(selectedModule);
@@ -160,9 +136,7 @@ function SuperAdminTopbar() {
   }
 
   function handleSignOut() {
-    localStorage.removeItem(
-      "shopdirect-auth"
-    );
+    localStorage.removeItem("shopdirect-auth");
 
     setIsProfileOpen(false);
 
@@ -173,39 +147,50 @@ function SuperAdminTopbar() {
 
   return (
     <header className="super-admin-topbar">
-      <div
-        className="workspace-search"
-        ref={searchAreaRef}
-      >
-        <div className="topbar-search">
-          <Search
-            size={17}
-            strokeWidth={1.8}
-          />
+      <div className="topbar-left">
+        {isMobile && (
+          <button
+            type="button"
+            className="mobile-menu-button"
+            onClick={onMenuClick}
+            aria-label="Open navigation menu"
+          >
+            <Menu size={21} strokeWidth={1.9} />
+          </button>
+        )}
 
-          <input
-            id="workspace-search"
-            name="workspace-search"
-            type="text"
-            value={query}
-            placeholder="Search across workspace..."
-            aria-label="Search across workspace"
-            autoComplete="off"
-            onChange={handleSearchChange}
-            onFocus={() => {
-              if (query.trim()) {
-                setIsSearchOpen(true);
-              }
-            }}
-            onKeyDown={handleSearchKeyDown}
-          />
-        </div>
+        <div
+          className="workspace-search"
+          ref={searchAreaRef}
+        >
+          <div className="topbar-search">
+            <Search
+              size={17}
+              strokeWidth={1.8}
+            />
 
-        {isSearchOpen && (
-          <div className="workspace-search-dropdown">
-            {searchResults.length > 0 ? (
-              searchResults.map(
-                (module, index) => {
+            <input
+              id="workspace-search"
+              name="workspace-search"
+              type="text"
+              value={query}
+              placeholder="Search across workspace..."
+              aria-label="Search across workspace"
+              autoComplete="off"
+              onChange={handleSearchChange}
+              onFocus={() => {
+                if (query.trim()) {
+                  setIsSearchOpen(true);
+                }
+              }}
+              onKeyDown={handleSearchKeyDown}
+            />
+          </div>
+
+          {isSearchOpen && (
+            <div className="workspace-search-dropdown">
+              {searchResults.length > 0 ? (
+                searchResults.map((module, index) => {
                   const Icon = module.icon;
 
                   return (
@@ -231,20 +216,18 @@ function SuperAdminTopbar() {
                         />
                       </span>
 
-                      <span>
-                        {module.name}
-                      </span>
+                      <span>{module.name}</span>
                     </button>
                   );
-                }
-              )
-            ) : (
-              <div className="workspace-search-empty">
-                No results found.
-              </div>
-            )}
-          </div>
-        )}
+                })
+              ) : (
+                <div className="workspace-search-empty">
+                  No results found.
+                </div>
+              )}
+            </div>
+          )}
+        </div>
       </div>
 
       <div className="topbar-actions">

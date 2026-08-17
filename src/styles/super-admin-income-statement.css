@@ -932,3 +932,89 @@
 .income-fixed-field {
   text-align: left;
 }
+
+/* =========================================================
+   INCOME STATEMENT — MOBILE REFINEMENT
+========================================================= */
+
+@media (max-width: 768px) {
+  .income-statement-page {
+    width: 100%;
+    padding: 0;
+  }
+
+  .income-statement-header {
+    width: 100%;
+    gap: 16px;
+    margin-bottom: 22px;
+  }
+
+  .income-statement-header h1 {
+    font-size: 34px;
+    line-height: 1.08;
+  }
+
+  .income-statement-description {
+    font-size: 13.5px;
+    line-height: 1.6;
+  }
+
+  .income-statement-actions {
+    width: 100%;
+  }
+
+  .income-download-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .income-statement-filters {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .income-statement-report {
+    width: 100%;
+    padding: 22px 20px;
+  }
+
+  .income-report-header h2 {
+    font-size: 22px;
+  }
+
+  .income-report-row {
+    gap: 12px;
+  }
+
+  .income-report-row span:first-child {
+    min-width: 0;
+    word-break: break-word;
+  }
+
+  .income-report-row strong {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .income-statement-header h1 {
+    font-size: 31px;
+  }
+
+  .income-statement-filters {
+    padding: 18px;
+  }
+
+  .income-statement-report {
+    padding: 20px 16px;
+  }
+
+  .income-report-header {
+    padding-bottom: 18px;
+  }
+
+  .income-report-row {
+    padding: 14px 2px;
+  }
+}

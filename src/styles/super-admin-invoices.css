@@ -1271,3 +1271,143 @@
     grid-template-columns: 1fr 1fr;
   }
 }
+
+/* =========================================================
+   INVOICES — MOBILE REFINEMENT
+========================================================= */
+
+@media (max-width: 768px) {
+  .super-admin-invoices {
+    width: 100%;
+    padding: 0;
+  }
+
+  .invoices-page-header {
+    width: 100%;
+    gap: 18px;
+    margin-bottom: 22px;
+  }
+
+  .invoices-page-header h1 {
+    font-size: 32px;
+    line-height: 1.1;
+  }
+
+  .invoices-description {
+    font-size: 13.5px;
+    line-height: 1.6;
+  }
+
+  .invoices-header-actions {
+    width: 100%;
+  }
+
+  .generate-invoice-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* SEARCH + FILTERS */
+
+  .invoice-filter-card {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .invoice-search {
+    width: 100%;
+  }
+
+  .invoice-status-tabs {
+    width: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 8px;
+  }
+
+  .invoice-status-tab {
+    flex: 1 1 auto;
+    min-width: 70px;
+
+    text-align: center;
+  }
+
+  /* RECORDS CARD */
+
+  .invoice-records-card {
+    width: 100%;
+  }
+
+  .invoice-records-header {
+    padding: 18px;
+    gap: 12px;
+  }
+
+  .invoice-records-header h2 {
+    font-size: 18px;
+  }
+
+  .invoice-empty-state {
+    min-height: 250px;
+    padding: 32px 20px;
+  }
+
+  /* FUTURE TABLE SUPPORT */
+
+  .invoice-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .invoice-table {
+    min-width: 760px;
+  }
+
+  /* MODAL */
+
+  .invoice-modal {
+    width: min(92vw, 620px);
+
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .invoice-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .invoice-modal-actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .invoice-modal-actions button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .invoices-page-header h1 {
+    font-size: 30px;
+  }
+
+  .invoice-filter-card {
+    padding: 18px;
+  }
+
+  .invoice-records-header {
+    padding: 16px;
+  }
+
+  .invoice-empty-state {
+    padding: 28px 16px;
+  }
+
+  .invoice-modal {
+    width: calc(100vw - 24px);
+  }
+}

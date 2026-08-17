@@ -1431,3 +1431,133 @@ body:has(.deleted-orders-modal-overlay) {
     font-size: 18px;
   }
 }
+
+/* =========================================================
+   DELETED ORDERS — MOBILE REFINEMENT
+========================================================= */
+
+@media (max-width: 768px) {
+  .super-admin-deleted-orders {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    padding: 0;
+
+    overflow-x: hidden;
+  }
+
+  /* HEADER */
+
+  .deleted-orders-header {
+    width: 100%;
+    margin-bottom: 22px;
+  }
+
+  .deleted-orders-header h1 {
+    font-size: 32px;
+    line-height: 1.1;
+  }
+
+  .deleted-orders-description {
+    font-size: 13.5px;
+    line-height: 1.6;
+  }
+
+  .deleted-orders-header-actions {
+    width: 100%;
+  }
+
+  .deleted-orders-refresh-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* FILTERS */
+
+  .deleted-orders-filter-card {
+    width: 100%;
+    max-width: 100%;
+
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+
+    padding: 20px;
+  }
+
+  .deleted-orders-search,
+  .deleted-orders-filter-group {
+    width: 100%;
+    min-width: 0;
+  }
+
+  /* RECORDS CARD */
+
+  .deleted-orders-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    overflow: hidden;
+  }
+
+  .deleted-orders-card-header {
+    padding: 18px;
+
+    gap: 12px;
+  }
+
+  .deleted-orders-card-header h2 {
+    font-size: 18px;
+  }
+
+  /* TABLE */
+
+  .deleted-orders-table-wrapper {
+    width: 100%;
+    max-width: 100%;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .deleted-orders-table {
+    width: max-content;
+    min-width: 760px;
+  }
+
+  .deleted-orders-table th,
+  .deleted-orders-table td {
+    white-space: nowrap;
+  }
+
+  /* EMPTY STATE */
+
+  .deleted-orders-empty-state {
+    min-width: 760px;
+    min-height: 230px;
+
+    padding: 32px 20px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+  .deleted-orders-header h1 {
+    font-size: 30px;
+  }
+
+  .deleted-orders-filter-card {
+    padding: 18px;
+  }
+
+  .deleted-orders-card-header {
+    padding: 16px;
+  }
+}

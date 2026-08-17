@@ -20,11 +20,12 @@
 
   overflow: visible;
 
-  z-index: 100;
+  z-index: 150;
 
   transition:
     width 0.22s ease,
-    padding 0.22s ease;
+    padding 0.22s ease,
+    transform 0.25s ease;
 }
 
 /* ========================================
@@ -160,7 +161,26 @@
   flex: 1;
   min-height: 0;
 
-  overflow: visible;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  padding-bottom: 6px;
+
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.18) transparent;
+}
+
+.sidebar-nav::-webkit-scrollbar {
+  width: 4px;
+}
+
+.sidebar-nav::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar-nav::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
 }
 
 .sidebar-link {
@@ -311,17 +331,23 @@
 
 .sidebar-link-featured:not(.active)::before {
   content: "";
+
   position: absolute;
   inset: 0;
+
   border-radius: inherit;
+
   background: linear-gradient(
     90deg,
     rgba(196, 181, 253, 0.06),
     rgba(255, 255, 255, 0.02),
     rgba(196, 181, 253, 0.06)
   );
+
   opacity: 0;
+
   animation: aiSidebarGlow 3.2s ease-in-out infinite;
+
   pointer-events: none;
 }
 
@@ -332,7 +358,9 @@
 .sidebar-feature-dot {
   width: 7px;
   height: 7px;
+
   margin-left: auto;
+
   flex-shrink: 0;
 
   border-radius: 50%;
@@ -351,9 +379,136 @@
 
 .sidebar-link-featured.active .sidebar-feature-dot {
   background: #6b3fa0;
+
   animation: none;
+
   box-shadow: none;
 }
+
+/* ========================================
+   MOBILE SIDEBAR
+======================================== */
+
+@media (max-width: 768px) {
+  .super-admin-sidebar {
+    width: min(280px, 84vw);
+    height: 100dvh;
+
+    padding: 18px 0 14px 16px;
+
+    overflow: hidden;
+
+    box-shadow: 18px 0 40px rgba(31, 20, 55, 0.2);
+
+    transform: translateX(-105%);
+
+    z-index: 160;
+  }
+
+  .super-admin-layout.mobile-sidebar-open .super-admin-sidebar {
+    transform: translateX(0);
+  }
+
+  .super-admin-layout.mobile-sidebar-closed .super-admin-sidebar {
+    transform: translateX(-105%);
+  }
+
+  .super-admin-layout.mobile-sidebar-open .sidebar-brand-main,
+  .super-admin-layout.mobile-sidebar-closed .sidebar-brand-main {
+    display: flex;
+  }
+
+  .super-admin-layout.mobile-sidebar-open .brand-copy,
+  .super-admin-layout.mobile-sidebar-closed .brand-copy {
+    display: block;
+  }
+
+  .super-admin-layout.mobile-sidebar-open .sidebar-brand,
+  .super-admin-layout.mobile-sidebar-closed .sidebar-brand {
+    justify-content: space-between;
+
+    padding: 4px 10px 16px 8px;
+
+    margin-right: 16px;
+  }
+
+  .super-admin-layout.mobile-sidebar-open .sidebar-close-button,
+  .super-admin-layout.mobile-sidebar-closed .sidebar-close-button {
+    width: 34px;
+    height: 34px;
+
+    display: grid;
+
+    border-radius: 9px;
+
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.82);
+  }
+
+  .super-admin-layout.mobile-sidebar-open .sidebar-nav,
+  .super-admin-layout.mobile-sidebar-closed .sidebar-nav {
+    align-items: stretch;
+
+    gap: 3px;
+  }
+
+  .super-admin-layout.mobile-sidebar-open .sidebar-link,
+  .super-admin-layout.mobile-sidebar-closed .sidebar-link {
+    width: calc(100% - 16px);
+    height: auto;
+    min-height: 42px;
+
+    justify-content: flex-start;
+
+    gap: 12px;
+
+    padding: 8px 14px;
+
+    border-radius: 999px;
+  }
+
+  .super-admin-layout.mobile-sidebar-open .sidebar-link span,
+  .super-admin-layout.mobile-sidebar-closed .sidebar-link span {
+    display: inline;
+  }
+
+  .super-admin-layout.mobile-sidebar-open .sidebar-link.active,
+  .super-admin-layout.mobile-sidebar-closed .sidebar-link.active {
+    width: calc(100% - 16px);
+
+    border-radius: 999px;
+  }
+
+  .super-admin-layout.mobile-sidebar-open .sidebar-link svg,
+  .super-admin-layout.mobile-sidebar-closed .sidebar-link svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 420px) {
+  .super-admin-sidebar {
+    width: 86vw;
+    max-width: 270px;
+  }
+
+  .sidebar-brand h2,
+  .brand-copy h2 {
+    font-size: 17px;
+  }
+
+  .sidebar-link {
+    font-size: 13px;
+  }
+}
+
+/* ========================================
+   ANIMATIONS
+======================================== */
 
 @keyframes aiSidebarGlow {
   0%,
@@ -387,5 +542,9 @@
   .sidebar-link-featured::before,
   .sidebar-feature-dot {
     animation: none;
+  }
+
+  .super-admin-sidebar {
+    transition: none;
   }
 }

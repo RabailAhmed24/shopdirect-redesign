@@ -1397,3 +1397,64 @@ body:has(.reports-calendar-overlay) {
     width: min(320px, calc(100vw - 28px));
   }
 }
+
+/* =========================================================
+   REPORTS — MOBILE REFINEMENT
+========================================================= */
+
+@media (max-width: 768px) {
+  .super-admin-reports {
+    width: 100%;
+    padding: 0;
+  }
+
+  .reports-page-header {
+    width: 100%;
+    gap: 18px;
+    margin-bottom: 24px;
+  }
+
+  .reports-page-header h1 {
+    font-size: 32px;
+  }
+
+  .reports-description {
+    font-size: 13.5px;
+  }
+
+  .reports-header-actions {
+    width: 100%;
+  }
+
+  .reports-date-filter {
+    flex-shrink: 0;
+  }
+
+  .reports-export-button {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .reports-filter-bar {
+    width: 100%;
+  }
+
+  .reports-results-card {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .reports-page-header h1 {
+    font-size: 30px;
+  }
+
+  .reports-results-header {
+    padding: 18px;
+  }
+
+  .reports-empty-state {
+    min-height: 220px;
+    padding: 34px 18px;
+  }
+}

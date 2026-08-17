@@ -1047,3 +1047,167 @@
     max-width: 84%;
   }
 }
+
+/* =========================================================
+   CHAT MONITORING — MOBILE REFINEMENT
+========================================================= */
+
+@media (max-width: 768px) {
+  .super-admin-chat-monitoring {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    padding: 0;
+
+    overflow-x: hidden;
+  }
+
+  /* HEADER */
+
+  .chat-monitoring-header {
+    width: 100%;
+
+    margin-bottom: 22px;
+  }
+
+  .chat-monitoring-header h1 {
+    font-size: 32px;
+    line-height: 1.1;
+  }
+
+  .chat-monitoring-description {
+    font-size: 13.5px;
+    line-height: 1.6;
+  }
+
+  .chat-monitoring-header-actions {
+    width: 100%;
+  }
+
+  .chat-refresh-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* SUMMARY CARDS */
+
+  .chat-monitoring-stats-grid {
+    width: 100%;
+
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+  }
+
+  .chat-monitoring-stat-card {
+    width: 100%;
+    min-width: 0;
+
+    padding: 18px;
+  }
+
+  /* MAIN MONITORING LAYOUT */
+
+  .chat-monitoring-grid {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    display: grid;
+    grid-template-columns: 1fr;
+
+    gap: 16px;
+  }
+
+  .chat-users-panel,
+  .chat-conversations-panel,
+  .chat-messages-panel {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    min-height: 360px;
+  }
+
+  /* PANEL HEADERS */
+
+  .chat-panel-header {
+    padding: 18px;
+  }
+
+  .chat-panel-header h2 {
+    font-size: 17px;
+  }
+
+  /* SEARCH */
+
+  .chat-user-search {
+    width: 100%;
+
+    padding: 16px;
+  }
+
+  .chat-user-search input {
+    width: 100%;
+    min-width: 0;
+  }
+
+  /* EMPTY STATES */
+
+  .chat-empty-state {
+    min-height: 250px;
+
+    padding: 32px 20px;
+
+    text-align: center;
+  }
+
+  /* MESSAGE AREA */
+
+  .chat-messages-body {
+    width: 100%;
+
+    min-height: 320px;
+
+    overflow-x: hidden;
+  }
+
+  .chat-message {
+    max-width: 88%;
+
+    word-break: break-word;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+  .chat-monitoring-header h1 {
+    font-size: 30px;
+  }
+
+  .chat-monitoring-stat-card {
+    padding: 16px;
+  }
+
+  .chat-panel-header {
+    padding: 16px;
+  }
+
+  .chat-user-search {
+    padding: 14px;
+  }
+
+  .chat-users-panel,
+  .chat-conversations-panel,
+  .chat-messages-panel {
+    min-height: 330px;
+  }
+
+  .chat-empty-state {
+    padding: 28px 16px;
+  }
+}

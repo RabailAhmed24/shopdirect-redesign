@@ -2064,3 +2064,179 @@ body:has(.ai-modal-overlay) {
 @media (max-width: 900px) {
   .ai-hub-summary { grid-template-columns: 1fr; gap: 12px; }
 }
+
+/* =========================================================
+   AI INNOVATION HUB — MOBILE REFINEMENT
+========================================================= */
+
+@media (max-width: 768px) {
+  .ai-hub-page {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  /* HEADER */
+
+  .ai-hub-header {
+    width: 100%;
+    margin-bottom: 22px;
+  }
+
+  .ai-hub-header h1 {
+    font-size: 32px;
+    line-height: 1.1;
+  }
+
+  .ai-hub-description {
+    font-size: 13.5px;
+    line-height: 1.6;
+  }
+
+  /* HERO */
+
+  .ai-hub-hero {
+    width: 100%;
+
+    padding: 20px;
+
+    border-radius: 18px;
+  }
+
+  .ai-hub-hero-content {
+    gap: 14px;
+  }
+
+  .ai-hub-hero h2 {
+    font-size: 20px;
+  }
+
+  /* STATS */
+
+  .ai-hub-stats-grid {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+  }
+
+  .ai-hub-stat-card {
+    width: 100%;
+    min-width: 0;
+
+    padding: 18px;
+  }
+
+  /* CATEGORY ACCORDION */
+
+  .ai-category-card {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .ai-category-header {
+    width: 100%;
+
+    padding: 16px;
+
+    gap: 12px;
+  }
+
+  .ai-category-header-content {
+    min-width: 0;
+  }
+
+  .ai-category-header h3 {
+    font-size: 15px;
+  }
+
+  .ai-category-header p {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  /* MODULE GRID */
+
+  .ai-modules-grid {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+
+    padding: 14px;
+  }
+
+  .ai-module-card {
+    width: 100%;
+    min-width: 0;
+
+    padding: 16px;
+  }
+
+  .ai-module-card h4 {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .ai-module-card p {
+    font-size: 12px;
+    line-height: 1.55;
+  }
+
+  /* MODULE FOOTER */
+
+  .ai-module-footer {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+  }
+
+  .ai-module-capabilities {
+    min-width: 0;
+
+    font-size: 11px;
+  }
+
+  .ai-module-details-button {
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .ai-hub-header h1 {
+    font-size: 30px;
+  }
+
+  .ai-hub-hero {
+    padding: 18px;
+  }
+
+  .ai-category-header {
+    padding: 14px;
+  }
+
+  .ai-modules-grid {
+    padding: 12px;
+  }
+
+  .ai-module-card {
+    padding: 14px;
+  }
+
+  .ai-module-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ai-module-details-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
